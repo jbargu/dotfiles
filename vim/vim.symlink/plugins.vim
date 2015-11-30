@@ -6,10 +6,16 @@ call vundle#begin()
 " let vundle manage vundle
 Plugin 'gmarik/vundle'
 
+" added
+Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'terryma/vim-multiple-cursors'
+
 " utilities
+Plugin 'tpope/vim-rails'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'mileszs/ack.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-commentary'
@@ -74,6 +80,5 @@ Plugin 'tpope/vim-markdown'
 Plugin 'fatih/vim-go'
 " Plugin 'tclem/vim-arduino'
 Plugin 'timcharper/textile.vim'
-
 call vundle#end()
 filetype plugin indent on

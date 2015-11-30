@@ -37,7 +37,7 @@ if has('mouse')
     set ttymouse=xterm2
 endif
 
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " faster redrawing
 set ttyfast
@@ -127,10 +127,9 @@ set encoding=utf8
 let base16colorspace=256  " Access colors present in 256 colorspace"
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
 execute "set background=".$BACKGROUND
-execute "colorscheme ".$THEME
+execute "colorscheme obsidian"
 
 " set number " show line numbers
-set relativenumber " show relative line numbers
 set number " show the current line number"
 
 set wrap "turn on line wrapping
@@ -226,10 +225,14 @@ nmap <leader>. <c-^>
 " enable . command in visual mode
 vnoremap . :normal .<cr>
 
-map <silent> <C-h> :call WinMove('h')<cr>
-map <silent> <C-j> :call WinMove('j')<cr>
-map <silent> <C-k> :call WinMove('k')<cr>
-map <silent> <C-l> :call WinMove('l')<cr>
+"map <silent> <C-h> :call WinMove('h')<cr>
+"map <silent> <C-j> :call WinMove('j')<cr>
+"map <silent> <C-k> :call WinMove('k')<cr>
+"map <silent> <C-l> :call WinMove('l')<cr>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 map <leader>wc :wincmd q<cr>
 
@@ -267,18 +270,18 @@ nmap <leader>w :setf textile<cr> :Goyo<cr>
 
 " Window movement shortcuts
 " move to the window in the direction shown, or create a new window
-function! WinMove(key)
-    let t:curwin = winnr()
-    exec "wincmd ".a:key
-    if (t:curwin == winnr())
-        if (match(a:key,'[jk]'))
-            wincmd v
-        else
-            wincmd s
-        endif
-        exec "wincmd ".a:key
-    endif
-endfunction
+"function! WinMove(key)
+    "let t:curwin = winnr()
+    "exec "wincmd ".a:key
+    "if (t:curwin == winnr())
+        "if (match(a:key,'[jk]'))
+            "wincmd v
+        "else
+            "wincmd s
+        "endif
+        "exec "wincmd ".a:key
+    "endif
+"endfunction
 
 " recursively search up from dirname, sourcing all .vimrc.local files along the way
 function! ApplyLocalSettings(dirname)
@@ -451,7 +454,7 @@ let g:SuperTabCrMapping = 0
 if (has("gui_running"))
     set guioptions=egmrt
     set background=light
-    colorscheme solarized
+    colorscheme obsidian
     let g:airline_left_sep=''
     let g:airline_right_sep=''
     let g:airline_powerline_fonts=0
@@ -459,3 +462,88 @@ if (has("gui_running"))
 endif
 
 call ApplyLocalSettings(expand('.'))
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Mine
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+syntax on
+
+
+" compiler
+map <F2> mm ggVG== 'm zz :w<CR>
+map <F3> :!g++ -O2 "%:p" -lpthread -lrt -fopenmp<CR>
+map <F4>  :!./a.out <CR>
+
+"commenting (NERD Commenter)
+map <M-x> <leader>c<space>
+
+" set current working directory
+set autochdir
+
+" set system clipboard
+set clipboard+=unnamedplus
+
+" colorscheme
+" IMPORTANT: Uncomment one of the following lines to force
+" using 256 colors (or 88 colors) if your terminal supports it,
+" but does not automatically use 256 colors by default.
+set t_Co=256
+""set t_Co=88
+"if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
+  "\ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
+  "" Use the guicolorscheme plugin to makes 256-color or 88-color
+  "" terminal use GUI colors rather than cterm colors.
+  "runtime! plugin/guicolorscheme.vim
+  "colorscheme devbox-dark-256
+"else
+  "" For 8-color 16-color terminals or for gvim, just use the
+  "" regular :colorscheme command.
+  "colorscheme sonofobsidian
+"endif
+
+set pastetoggle=<C-F11>
+
+" folding
+set foldnestmax=1
+set foldmethod=indent
+map <M-c> za
+set foldlevel=99
+
+" trailing spaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+let c_space_errors = 1
+
+" line length
+set fo+=t
+set tw=80
+set ts=2
+set sw=2
+set smartindent
+
+set wildmode=full
+set splitright
+set autoread
+
+" alt shortcut in terminal
+let c='a'
+while c <= 'z'
+  exec "set <A-".c.">=\e".c
+  exec "imap \e".c." <A-".c.">"
+  let c = nr2char(1+char2nr(c))
+endw
+
+set timeout ttimeoutlen=50
+
+" setting for multi cursor
+let g:multi_cursor_use_default_mapping=0
+
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-m>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'

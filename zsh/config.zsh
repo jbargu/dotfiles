@@ -30,5 +30,5 @@ bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
 
-fpath=($ZSH/functions $fpath)
-autoload -U $ZSH/functions/*(:t)
+fpath=($ZSH_DOTFILES/functions $fpath)
+autoload -U $ZSH_DOTFILES/functions/*(:t)

@@ -1,7 +1,7 @@
 # gitconfig
 [user]
-    name = Nick Nisi
-    email = nick@nisi.org
+	name = Jure Grabnar
+	email = jgrabnar@biosistemika.com
 [github]
     user = nicknisi
 [init]
@@ -135,3 +135,5 @@
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustexitcode = true
+[merge]
+	tool = vimdiff
