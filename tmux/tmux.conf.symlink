@@ -112,7 +112,8 @@ bind-key -t vi-copy y copy-pipe 'xclip -selection clipboard >/dev/null'
 ### Color & Style Settings ###
 ##############################
 
-source ~/.dotfiles/tmux/theme.sh
+#source ~/.dotfiles/tmux/theme.sh
+source /usr/local/lib/python2.7/dist-packages/powerline/bindings/tmux/powerline.conf
 
 # Smart pane switching with awareness of vim splits
 is_vim='echo "#{pane_current_command}" | grep -iqE "(^|\/)g?(view|n?vim?)(diff)?$"'

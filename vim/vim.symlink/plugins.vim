@@ -50,6 +50,8 @@ Plugin 'gregsexton/MatchTag'
 Plugin 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)
 Plugin 'sickill/vim-pasta'
 Plugin 'junegunn/goyo.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'airblade/vim-gitgutter'
 
 " colorschemes
 Plugin 'chriskempson/base16-vim'

@@ -1,5 +1,6 @@
 export DOTFILES=$HOME/.dotfiles
 export ZSH_DOTFILES=$DOTFILES/zsh
+export ZSH_CUSTOM=$ZSH_DOTFILES/custom #.oh my zsh custom themes
 
 # define the code directory
 if [[ -d ~/code ]]; then
@@ -80,15 +81,17 @@ fi
     # [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
     #source $BASE16_SHELL
 
+
+    source /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh
     ######################### OH MY ZSH #######################33
     #Path to your oh-my-zsh installation.
     export ZSH=/home/jure/.oh-my-zsh
 
     # Set name of the theme to load.
-    # Look in ~/.oh-my-zsh/themes/
+     #Look in ~/.oh-my-zsh/themes/
     # Optionally, if you set this to "random", it'll load a random theme each
     # time that oh-my-zsh is loaded.
-    ZSH_THEME="amuse"
+    ZSH_THEME="amuse-custom"
 
     # Uncomment the following line to use case-sensitive completion.
     # CASE_SENSITIVE="true"
@@ -132,7 +135,7 @@ fi
     # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
     # Example format: plugins=(rails git textmate ruby lighthouse)
     # Add wisely, as too many plugins slow down shell startup.
-    plugins=(git bundler chucknorris common-aliases docker sudo tmux)
+    plugins=(git bundler common-aliases docker sudo tmux)
 
     export ZSH_TMUX_AUTOSTART=true
     # User configuration
