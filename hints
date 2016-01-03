@@ -12,3 +12,12 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 Gotta create ~/.config/powerline/themes/tmux directory
 with ln -s to ~/.dotfiles/tmux/powerline../default.json
 
+# How to install
+sudo apt-get install python-pip git
+sudo pip install git+git://github.com/Lokaltog/powerline
+
+wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
+https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+mkdir -p ~/.fonts/ && mv PowerlineSymbols.otf ~/.fonts/
+fc-cache -vf ~/.fonts
+mkdir -p ~/.config/fontconfig/conf.d/ && mv 10-powerline-symbols.conf/
