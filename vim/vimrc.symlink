@@ -549,6 +549,11 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 " Tawgbar outlitne
-nmap <F8> :TagbarToggle<CR>
+nmap <leader>l :TagbarToggle<CR>
 
-
+" Unbind arrow keys
+for prefix in ['i', 'n', 'v']
+  for key in ['<Up>', '<Down>', '<Left>', '<Right>']
+    exe prefix . "noremap " . key . " <Nop>"
+  endfor
+endfor

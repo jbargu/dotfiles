@@ -3,3 +3,12 @@
 - install tmux 2.0
 - install powerline
 - add custom themes xclip
+
+
+TMUX plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Powerline
+Gotta create ~/.config/powerline/themes/tmux directory
+with ln -s to ~/.dotfiles/tmux/powerline../default.json
+

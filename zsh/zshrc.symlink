@@ -76,13 +76,19 @@ fi
       export BACKGROUND="dark"
     fi
 
-    hash -d -- -mag=/home/jure/Documents/mag
+    # Add backward history search
+    bindkey "^R" history-incremental-search-backward
+
+    hash -d -- mag=/home/jure/Documents/mag
+    hash -d -- p=/home/jure/ruby_workspace/biosis/web
+    hash -d -- r=/home/jure/ruby_workspace/rng
+
     #BASE16_SHELL="$DOTFILES/.config/base16-shell/$THEME.$BACKGROUND.sh"
     # [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
     #source $BASE16_SHELL
 
 
-    source /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh
+    #source /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh
     ######################### OH MY ZSH #######################33
     #Path to your oh-my-zsh installation.
     export ZSH=/home/jure/.oh-my-zsh
@@ -135,7 +141,7 @@ fi
     # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
     # Example format: plugins=(rails git textmate ruby lighthouse)
     # Add wisely, as too many plugins slow down shell startup.
-    plugins=(git bundler common-aliases docker sudo tmux)
+    plugins=(git bundler common-aliases docker sudo tmux vi-mode chucknorris)
 
     export ZSH_TMUX_AUTOSTART=true
     # User configuration

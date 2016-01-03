@@ -9,6 +9,13 @@ Plugin 'gmarik/vundle'
 " added
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'tpope/vim-obsession'
+
+" Folding for python
+Plugin 'tmhedberg/SimpylFold'
+
+" Relative numbers
+Bundle "myusuf3/numbers.vim"
 
 " utilities
 Plugin 'tpope/vim-rails'
