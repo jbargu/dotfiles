@@ -13,6 +13,7 @@ Bundle 'tpope/vim-obsession'
 
 " Folding for python
 Plugin 'tmhedberg/SimpylFold'
+Bundle 'edkolev/tmuxline.vim'
 
 " Relative numbers
 Bundle "myusuf3/numbers.vim"
