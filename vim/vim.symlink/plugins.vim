@@ -15,7 +15,7 @@ Bundle 'tpope/vim-obsession'
 Plugin 'tmhedberg/SimpylFold'
 Bundle 'edkolev/tmuxline.vim'
 
-" Relative numbers
+" Relative numbervs
 Bundle "myusuf3/numbers.vim"
 
 " utilities

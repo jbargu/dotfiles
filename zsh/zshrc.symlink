@@ -141,7 +141,7 @@ fi
     # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
     # Example format: plugins=(rails git textmate ruby lighthouse)
     # Add wisely, as too many plugins slow down shell startup.
-    plugins=(git bundler common-aliases docker sudo tmux vi-mode chucknorris)
+    plugins=(git bundler common-aliases docker sudo tmux vi-mode chucknorris fasd)
 
     export ZSH_TMUX_AUTOSTART=true
     # User configuration
@@ -175,3 +175,6 @@ fi
     # Example aliases
     # alias zshconfig="mate ~/.zshrc"
     # alias ohmyzsh="mate ~/.oh-my-zsh"
+    alias v='f -e vim' # quick opening files with vim
+    alias m='f -e mplayer' # quick opening files with mplayer
+    alias o='a -e xdg-open' # quick opening files with xdg-open

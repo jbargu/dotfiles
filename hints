@@ -8,11 +8,7 @@
 TMUX plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# Powerline
-Gotta create ~/.config/powerline/themes/tmux directory
-with ln -s to ~/.dotfiles/tmux/powerline../default.json
-
-# How to install
+# How to install powerline
 sudo apt-get install python-pip git
 sudo pip install git+git://github.com/Lokaltog/powerline
 
@@ -21,3 +17,5 @@ https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
 mkdir -p ~/.fonts/ && mv PowerlineSymbols.otf ~/.fonts/
 fc-cache -vf ~/.fonts
 mkdir -p ~/.config/fontconfig/conf.d/ && mv 10-powerline-symbols.conf/
+
+- Have to install fasd
