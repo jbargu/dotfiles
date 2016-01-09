@@ -211,7 +211,7 @@ nmap ;s :set invspell spelllang=en<cr>
 set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
 highlight SpecialKey ctermbg=none " make the highlighting of tabs less annoying
 set showbreak=↪
-nmap <leader>l :set list!<cr>
+nmap <leader>p :set list!<cr>
 
 " Textmate style indentation
 vmap <leader>[ <gv
@@ -549,7 +549,7 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 " Tawgbar outlitne
-nmap <leader>l :TagbarToggle<CR>
+nmap <leader>o :TagbarToggle<CR>
 
 " Fugitive mappings
 nnoremap <silent> <leader>gs :Gstatus<CR>
