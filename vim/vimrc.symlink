@@ -45,6 +45,13 @@ set ttyfast
 " highlight conflicts
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
+" latex box
+filetype plugin on
+let s:extfname = expand("%:e")
+if s:extfname ==? "tex"
+  let g:LatexBox_split_type="new"
+endif
+
 " file type specific settings
 if has('autocmd') && !exists('autocommands_loaded')
     let autocommands_loaded = 1
@@ -568,3 +575,4 @@ for prefix in ['i', 'n', 'v']
     exe prefix . "noremap " . key . " <Nop>"
   endfor
 endfor
+

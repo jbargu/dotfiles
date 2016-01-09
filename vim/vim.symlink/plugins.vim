@@ -17,6 +17,7 @@ Bundle 'edkolev/tmuxline.vim'
 
 " Relative numbervs
 Bundle "myusuf3/numbers.vim"
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
 " utilities
 Plugin 'tpope/vim-rails'
