@@ -576,3 +576,6 @@ for prefix in ['i', 'n', 'v']
   endfor
 endfor
 
+" Easy tags
+let g:easytags_async = 1
+let g:easytags_autorecurse = 1

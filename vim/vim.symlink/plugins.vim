@@ -19,6 +19,8 @@ Bundle 'edkolev/tmuxline.vim'
 Bundle "myusuf3/numbers.vim"
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
+Bundle "xolox/vim-misc"
+Bundle "xolox/vim-easytags"
 " utilities
 Plugin 'tpope/vim-rails'
 Plugin 'kien/ctrlp.vim'
