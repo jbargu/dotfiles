@@ -89,7 +89,7 @@ fi
     bindkey "^R" history-incremental-search-backward
 
     hash -d -- mag=/home/jure/Documents/mag
-    hash -d -- p=/home/jure/ruby_workspace/biosis/web
+    hash -d -- p=/home/jure/ruby_workspace/web
     hash -d -- r=/home/jure/ruby_workspace/rng
 
     #BASE16_SHELL="$DOTFILES/.config/base16-shell/$THEME.$BACKGROUND.sh"
