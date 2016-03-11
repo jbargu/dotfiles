@@ -578,3 +578,9 @@ endfor
 
 " Youcompleteme
 let g:ycm_autoclose_preview_window_after_completion=1
+let g:EclimCompletionMethod = 'omnifunc'
+
+" eclim mappings
+nnoremap <silent> <leader>1 :JavaCorrect<CR>
+nnoremap <silent> <leader>2 :JavaDocPreview<CR>
+nnoremap <silent> <leader>jr :Java<CR>
