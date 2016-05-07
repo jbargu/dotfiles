@@ -14,6 +14,7 @@ Bundle 'tpope/vim-obsession'
 " Folding for python
 Plugin 'tmhedberg/SimpylFold'
 Bundle 'edkolev/tmuxline.vim'
+Plugin 'chrisbra/csv.vim'
 
 " Relative numbervs
 Bundle "myusuf3/numbers.vim"
@@ -65,6 +66,7 @@ Plugin 'airblade/vim-gitgutter'
 
 " colorschemes
 Plugin 'chriskempson/base16-vim'
+Plugin 'junegunn/seoul256.vim'
 
 " JavaScript
 Plugin 'hail2u/vim-css3-syntax'
