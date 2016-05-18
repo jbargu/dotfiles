@@ -568,6 +568,8 @@ nnoremap <silent> <leader>gp :Git push<CR>
 nnoremap <silent> <leader>gr :Gread<CR>
 nnoremap <silent> <leader>gw :Gwrite<CR>
 nnoremap <silent> <leader>ge :Gedit<CR>
+nnoremap <silent> <leader>e :cnext<CR>
+nnoremap <silent> <leader>q :cprev<CR>
 
 " Unbind arrow keys
 for prefix in ['i', 'n', 'v']
@@ -579,6 +581,7 @@ endfor
 " Youcompleteme
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:EclimCompletionMethod = 'omnifunc'
+let g:ycm_confirm_extra_conf = 0
 
 " eclim mappings
 nnoremap <silent> <leader>1 :JavaCorrect<CR>

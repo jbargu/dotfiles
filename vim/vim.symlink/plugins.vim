@@ -14,6 +14,7 @@ Bundle 'tpope/vim-obsession'
 " Folding for python
 Plugin 'tmhedberg/SimpylFold'
 Bundle 'edkolev/tmuxline.vim'
+Plugin 'chrisbra/csv.vim'
 
 " PEP8 for python
 "Bundle "nvie/vim-flake8"
@@ -69,6 +70,7 @@ Plugin 'airblade/vim-gitgutter'
 " colorschemes
 Plugin 'chriskempson/base16-vim'
 Plugin 'sheerun/vim-wombat-scheme'
+Plugin 'junegunn/seoul256.vim'
 
 " JavaScript
 Plugin 'hail2u/vim-css3-syntax'

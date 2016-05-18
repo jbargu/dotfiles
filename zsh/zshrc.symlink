@@ -40,6 +40,7 @@ fi
     eval "$(tmuxifier init -)"
     # add sml
     export PATH=/opt/smlnj/bin:$PATH
+    export PATH="$HOME/opt/cross/bin:$PATH"
 
     # check for custom bin directory and add to path
     if [[ -d ~/bin ]]; then
@@ -183,3 +184,6 @@ fi
     alias m='f -e mplayer' # quick opening files with mplayer
     alias o='xdg-open' # quick opening files with xdg-open
     alias oa='a -e xdg-open' # quick opening files with xdg-open
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
