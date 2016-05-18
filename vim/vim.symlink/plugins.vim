@@ -15,6 +15,9 @@ Bundle 'tpope/vim-obsession'
 Plugin 'tmhedberg/SimpylFold'
 Bundle 'edkolev/tmuxline.vim'
 
+" PEP8 for python
+"Bundle "nvie/vim-flake8"
+
 " Relative numbervs
 Bundle "myusuf3/numbers.vim"
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
@@ -65,6 +68,7 @@ Plugin 'airblade/vim-gitgutter'
 
 " colorschemes
 Plugin 'chriskempson/base16-vim'
+Plugin 'sheerun/vim-wombat-scheme'
 
 " JavaScript
 Plugin 'hail2u/vim-css3-syntax'

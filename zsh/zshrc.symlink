@@ -33,7 +33,11 @@ fi
     # adding path directory for custom scripts
     export PATH=$DOTFILES/bin:$PATH
 
+    export PATH="$HOME/opt/cross/bin:$PATH"
 
+    # tmuxifier
+    export PATH="$HOME/.tmuxifier/bin:$PATH"
+    eval "$(tmuxifier init -)"
     # add sml
     export PATH=/opt/smlnj/bin:$PATH
 
