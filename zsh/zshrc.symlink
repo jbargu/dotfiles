@@ -25,6 +25,10 @@ fi
 
     export PATH=/usr/local/bin:$PATH
 
+    # android
+    export PATH=/home/jure/Android/Sdk/platform-tools:$PATH
+    export PATH=/home/jure/Android/Sdk/tools:$PATH
+
     # add /usr/local/sbin
     if [[ -d /usr/local/sbin ]]; then
       export PATH=/usr/local/sbin:$PATH
