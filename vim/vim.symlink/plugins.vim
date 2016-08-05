@@ -6,6 +6,10 @@ call vundle#begin()
 " let vundle manage vundle
 Plugin 'gmarik/vundle'
 
+" pull review
+Bundle 'junkblocker/patchreview-vim'
+Bundle 'codegram/vim-codereview'
+
 " added
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'terryma/vim-multiple-cursors'
@@ -21,11 +25,11 @@ Plugin 'chrisbra/csv.vim'
 
 " Relative numbervs
 Bundle "myusuf3/numbers.vim"
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
 Bundle "Valloric/YouCompleteMe"
 " utilities
 Plugin 'tpope/vim-rails'
+Plugin 'ngmy/vim-rubocop'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'

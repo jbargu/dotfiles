@@ -220,6 +220,16 @@ highlight SpecialKey ctermbg=none " make the highlighting of tabs less annoying
 set showbreak=↪
 nmap <leader>p :set list!<cr>
 
+" Add shortcuts for tab
+nnoremap th  :tabfirst<CR>
+nnoremap tj  :tabprev<CR>
+nnoremap tk  :tabnext<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tt  :tabedit<Space>
+nnoremap tn  :tabnew<Space>
+nnoremap tm  :tabm<Space>
+nnoremap tc  :tabclose<CR>
+
 " Textmate style indentation
 vmap <leader>[ <gv
 vmap <leader>] >gv
@@ -431,6 +441,7 @@ nmap <leader>s :SyntasticToggleMode<cr>
 
 " allow es5 mode when looking at TypeScript
 let g:syntastic_typescript_tsc_args = '--module amd --target ES5 --noImplicitAny'
+let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_typescript_checkers = ['tslint']
 let g:syntastic_javascript_checkers = ['jshint', 'jscs']
 
@@ -557,6 +568,7 @@ let g:multi_cursor_quit_key='<Esc>'
 
 " Tawgbar outlitne
 nmap <leader>o :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
 
 " Fugitive mappings
 nnoremap <silent> <leader>gs :Gstatus<CR>
