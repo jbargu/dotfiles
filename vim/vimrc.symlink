@@ -606,3 +606,11 @@ map <space> <Plug>(easymotion-prefix)
 
 " Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
+
+" unimpaired
+nmap < [
+nmap > ]
+omap < [
+omap > ]
+xmap < [
+xmap > ]
