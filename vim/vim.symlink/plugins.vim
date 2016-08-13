@@ -27,6 +27,8 @@ Plugin 'chrisbra/csv.vim'
 Bundle "myusuf3/numbers.vim"
 
 Bundle "Valloric/YouCompleteMe"
+Plugin 'easymotion/vim-easymotion'
+
 " utilities
 Plugin 'tpope/vim-rails'
 Plugin 'ngmy/vim-rubocop'

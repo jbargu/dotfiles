@@ -599,3 +599,10 @@ let g:ycm_confirm_extra_conf = 0
 nnoremap <silent> <leader>1 :JavaCorrect<CR>
 nnoremap <silent> <leader>2 :JavaDocPreview<CR>
 nnoremap <silent> <leader>jr :Java<CR>
+
+" easy motion options
+" leader for easy motion
+map <space> <Plug>(easymotion-prefix)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
