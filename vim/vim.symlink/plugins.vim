@@ -29,6 +29,10 @@ Bundle "myusuf3/numbers.vim"
 Bundle "Valloric/YouCompleteMe"
 Plugin 'easymotion/vim-easymotion'
 
+" ruby
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-utils/vim-ruby-fold'
+
 " utilities
 Plugin 'tpope/vim-rails'
 Plugin 'ngmy/vim-rubocop'
