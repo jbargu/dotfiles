@@ -46,6 +46,9 @@ fi
     export PATH=/opt/smlnj/bin:$PATH
     export PATH="$HOME/opt/cross/bin:$PATH"
 
+    # add hub
+    export PATH="$HOME/Downloads/hub-linux-amd64-2.3.0-pre3/bin:$PATH"
+
     # check for custom bin directory and add to path
     if [[ -d ~/bin ]]; then
       export PATH=~/bin:$PATH

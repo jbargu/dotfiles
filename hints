@@ -20,3 +20,5 @@ fc-cache -vf ~/.fonts
 mkdir -p ~/.config/fontconfig/conf.d/ && mv 10-powerline-symbols.conf/
 
 - Have to install fasd
+
+- install hub
