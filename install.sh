@@ -14,7 +14,7 @@ sudo add-apt-repository -yu ppa:pi-rho/dev
 sudo apt-get update -yqqu
 sudo apt-get install -yqqu tmux
 
-sudo apt-get install vim-gnome git zsh wget xclip
+sudo apt-get install vim-gnome git zsh wget xclip build-essential cmake python-dev python3-dev
 
 git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
