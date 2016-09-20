@@ -17,10 +17,12 @@ sudo apt-get install -yqqu tmux
 sudo apt-get install vim-gnome git zsh wget xclip
 
 git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone https://github.com/clvv/fasd.git
 cd ~/fasd
 make install
 cd ~
+
 
 # Install powerline font
 mkdir -p ~/.fonts/
