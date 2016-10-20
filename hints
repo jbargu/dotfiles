@@ -1,3 +1,5 @@
+Rename vundle and clone it
+
 - install xclip
 - set default running script as zsh (ohmyzsh runs tmux)
 - install tmux 2.0
