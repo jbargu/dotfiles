@@ -1,7 +1,7 @@
 # gitconfig
 [user]
 	name = Jure Grabnar
-	email = jgrabnar@biosistemika.com
+	email = jure.grabnar@gmail.com
 [github]
     user = nicknisi
 [init]
