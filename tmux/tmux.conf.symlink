@@ -110,7 +110,20 @@ unbind p
 bind p paste-buffer
 bind -t vi-copy 'v' begin-selection
 bind -t vi-copy 'y' copy-selection
-bind-key -t vi-copy y copy-pipe 'xclip -selection clipboard >/dev/null'
+#bind-key -t vi-copy y copy-pipe 'xclip -selection clipboard >/dev/null'
+
+## Yank to copy text with y.
+bind-key -t vi-copy y copy-pipe "tmux save-buffer - | xclip -sel clipboard -i"
+#
+# Update default binding of `Enter` to also copy with this method.
+unbind -t vi-copy Enter
+bind-key -t vi-copy Enter copy-pipe "tmux save-buffer - | xclip -sel clipboard -i"
+
+# Toggle rectangular copy mode.
+bind-key -t vi-copy 'C-v' rectangle-toggle
+
+# http://askubuntu.com/a/507215/413683
+set -g set-clipboard off
 
 ##############################
 ### Color & Style Settings ###
@@ -146,12 +159,15 @@ set -g @plugin 'tmux-plugins/tmux-copycat'
 set -g @plugin 'tmux-plugins/tmux-open'
 set -g @plugin 'tmux-plugins/tmux-sessionist'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'tmux-plugins/tmux-continuum'
 # set -g @plugin 'github_username/plugin_name'
 # set -g @plugin 'git@github.com/user/plugin'
 # set -g @plugin 'git@bitbucket.com/user/plugin'
 
 # Vim resurrection
 set -g @resurrect-strategy-vim 'session'
+set -g @continuum-restore 'on'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
