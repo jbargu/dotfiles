@@ -103,6 +103,7 @@ Plugin 'cakebaker/scss-syntax.vim'
 " Plugin 'kchmck/vim-coffee-script'
 " Plugin 'Valloric/YouCompleteMe'
 " Plugin 'marijnh/tern_for_vim'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
 " languages
 Plugin 'tpope/vim-markdown'
