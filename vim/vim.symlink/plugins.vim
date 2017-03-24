@@ -20,9 +20,6 @@ Plugin 'tmhedberg/SimpylFold'
 Bundle 'edkolev/tmuxline.vim'
 Plugin 'chrisbra/csv.vim'
 
-" Latex
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
-
 " PEP8 for python
 "Bundle "nvie/vim-flake8"
 
