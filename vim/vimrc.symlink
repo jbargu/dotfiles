@@ -3,6 +3,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " load plugins from vundle
+set rtp+=~/.vim/bundle/vundle
 source ~/.vim/plugins.vim
 
 " Abbreviations
