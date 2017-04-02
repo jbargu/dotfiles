@@ -97,7 +97,7 @@ hi TabLineFill            term=NONE            cterm=NONE             ctermbg=25
 hi TabLineSel             term=bold            cterm=bold             ctermbg=249           ctermfg=15
 hi Title                  term=bold            cterm=bold             ctermbg=NONE          ctermfg=NONE
 hi VertSplit              term=reverse         cterm=reverse          ctermbg=102           ctermfg=255
-hi Visual                 term=reverse         cterm=NONE             ctermbg=230           ctermfg=fg
+hi Visual                 term=reverse         cterm=NONE             ctermbg=120           ctermfg=fg
 hi VisualNOS              term=bold            cterm=bold             ctermbg=NONE          ctermfg=fg
 hi WarningMsg             term=NONE            cterm=NONE             ctermbg=NONE          ctermfg=196
 hi WildMenu               term=NONE            cterm=NONE             ctermbg=226           ctermfg=16
