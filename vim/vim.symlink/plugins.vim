@@ -78,6 +78,9 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'airblade/vim-gitgutter'
 
+" Ionic
+Plugin 'burnettk/vim-angular'
+
 " colorschemes
 Plugin 'chriskempson/base16-vim'
 Plugin 'sheerun/vim-wombat-scheme'
