@@ -3,7 +3,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " load plugins from vundle
-set rtp+=~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/Vundle.vim
 source ~/.vim/plugins.vim
 
 " Abbreviations
@@ -77,6 +77,9 @@ if has('autocmd') && !exists('autocommands_loaded')
     autocmd BufNewFile,BufRead *.ejs set filetype=html
     autocmd BufNewFile,BufRead *.ino set filetype=c
     autocmd BufNewFile,BufRead *.svg set filetype=xml
+
+    " Turn off matching of brackets for HTML to prevent clashing with autoclose
+    au FileType html let b:delimitMate_matchpairs = "(:),[:],{:}"
 
     " make quickfix windows take all the lower section of the screen when there
     " are multiple windows open

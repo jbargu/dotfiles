@@ -82,6 +82,9 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'airblade/vim-gitgutter'
 
+" HTML
+Plugin 'alvan/vim-closetag'
+
 " Ionic
 Plugin 'burnettk/vim-angular'
 
