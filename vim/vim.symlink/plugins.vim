@@ -33,6 +33,10 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-utils/vim-ruby-fold'
 
+" Elixir
+Plugin 'slashmili/alchemist.vim'
+Plugin 'elixir-editors/vim-elixir'
+
 " utilities
 Plugin 'tpope/vim-rails'
 Plugin 'ngmy/vim-rubocop'
