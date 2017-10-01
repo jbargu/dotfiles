@@ -16,7 +16,6 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-obsession'
 
 " Folding for python
-Plugin 'tmhedberg/SimpylFold'
 Bundle 'edkolev/tmuxline.vim'
 Plugin 'chrisbra/csv.vim'
 
