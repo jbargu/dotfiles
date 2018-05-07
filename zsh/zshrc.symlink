@@ -14,6 +14,10 @@ fi
     source ~/.localrc
   fi
 
+  if [[ -a ~/usr/bin/virtualenvwrapper.sh ]]; then
+    source ~/usr/bin/virtualenvwrapper.sh
+  fi
+
 
   # initialize autocomplete
   autoload -U compinit
@@ -53,16 +57,6 @@ fi
 
     [ -z "$TMUX" ] && export TERM=xterm-256color
 
-    # install rbenv
-    if hash rbenv 2>/dev/null; then
-      eval "$(rbenv init -)"
-    fi
-
-    if [[ -d ~/.rvm ]]; then
-      PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
-      source ~/.rvm/scripts/rvm
-    fi
-
     # alias git to hub
     if hash hub 2>/dev/null; then
       eval "$(hub alias -s)"
@@ -70,12 +64,6 @@ fi
 
     # source nvm
     export NVM_DIR=~/.nvm
-
-    if hash brew 2>/dev/null; then
-      source $(brew --prefix nvm)/nvm.sh
-      source `brew --prefix`/etc/profile.d/z.sh
-    fi
-
 
     # Base16 Shell
     # if [ -z "$THEME" ]; then
@@ -150,7 +138,7 @@ fi
     # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
     # Example format: plugins=(rails git textmate ruby lighthouse)
     # Add wisely, as too many plugins slow down shell startup.
-    plugins=(git bundler common-aliases docker sudo tmux vi-mode chucknorris fasd github)
+    plugins=(git bundler common-aliases docker sudo tmux vi-mode fasd github virtualenvwrapper)
 
     export ZSH_TMUX_AUTOSTART=true
     # User configuration
@@ -196,6 +184,5 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
 export CUDA_HOME=/usr/local/cuda
 
-. /home/jure/torch/install/bin/torch-activate
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
