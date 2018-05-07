@@ -7,10 +7,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 source ~/.vim/plugins.vim
 
 " Abbreviations
-abbr funciton function
-abbr teh the
-abbr tempalte template
-
 set nocompatible " not compatible with vi
 set autoread " detect when a file is changed
 
@@ -138,7 +134,7 @@ set encoding=utf8
 let base16colorspace=256  " Access colors present in 256 colorspace"
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
 execute "set background=".$BACKGROUND
-execute "colorscheme wombat"
+execute "colorscheme raggi"
 
 " set number " show line numbers
 set number " show the current line number"
