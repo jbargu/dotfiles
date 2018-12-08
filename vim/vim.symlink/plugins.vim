@@ -20,7 +20,10 @@ Bundle 'edkolev/tmuxline.vim'
 Plugin 'chrisbra/csv.vim'
 
 " PEP8 for python
-"Bundle "nvie/vim-flake8"
+Bundle "nvie/vim-flake8"
+
+" Auto generatee docstrings with CTRL+I
+Bundle "heavenshell/vim-pydocstring"
 
 " Relative numbervs
 Bundle "myusuf3/numbers.vim"
@@ -31,6 +34,10 @@ Plugin 'easymotion/vim-easymotion'
 " ruby
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-utils/vim-ruby-fold'
+
+" For selecting code inside do-blocks in ruby
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
 
 " Elixir
 Plugin 'slashmili/alchemist.vim'
@@ -53,7 +60,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'benmills/vimux'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'garbas/vim-snipmate'
@@ -121,3 +128,6 @@ Plugin 'fatih/vim-go'
 Plugin 'timcharper/textile.vim'
 call vundle#end()
 filetype plugin indent on
+
+" Neovim
+Plugin 'neomake/neomake'

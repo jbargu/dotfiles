@@ -101,6 +101,7 @@ bind Up new-window -d -n fullscreen \; swap-pane -s fullscreen.1 \; select-windo
 unbind Down
 bind Down last-window \; swap-pane -s fullscreen.1 \; kill-window -t fullscreen
 
+set -g status-keys vi
 # set vi mode for copy mode
 setw -g mode-keys vi
 # more settings to make copy-mode more vim-like
@@ -108,19 +109,23 @@ unbind [
 bind Escape copy-mode
 unbind p
 bind p paste-buffer
-bind -t vi-copy 'v' begin-selection
-bind -t vi-copy 'y' copy-selection
-#bind-key -t vi-copy y copy-pipe 'xclip -selection clipboard >/dev/null'
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
+
+#bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "xclip -i -f -selection primary | xclip -i -selection clipboard"
+bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -i -f -selection primary | xclip -i -selection clipboard"
+#bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
 
 ## Yank to copy text with y.
-bind-key -t vi-copy y copy-pipe "tmux save-buffer - | xclip -sel clipboard -i"
+#bind-key -t vi-copy y copy-pipe "tmux save-buffer - | xclip -sel clipboard -i"
 #
 # Update default binding of `Enter` to also copy with this method.
-unbind -t vi-copy Enter
-bind-key -t vi-copy Enter copy-pipe "tmux save-buffer - | xclip -sel clipboard -i"
+#unbind -t vi-copy Enter
+#bind-key -t vi-copy Enter copy-pipe "tmux save-buffer - | xclip -sel clipboard -i"
 
 # Toggle rectangular copy mode.
-bind-key -t vi-copy 'C-v' rectangle-toggle
+#bind-key -t vi-copy 'C-v' rectangle-toggle
 
 # http://askubuntu.com/a/507215/413683
 set -g set-clipboard off
@@ -161,6 +166,8 @@ set -g @plugin 'tmux-plugins/tmux-sessionist'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-yank'
 set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'nhdaly/tmux-better-mouse-mode'
 # set -g @plugin 'github_username/plugin_name'
 # set -g @plugin 'git@github.com/user/plugin'
 # set -g @plugin 'git@bitbucket.com/user/plugin'

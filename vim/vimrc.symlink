@@ -31,7 +31,7 @@ set completeopt+=longest
 
 if has('mouse')
     set mouse=a
-    set ttymouse=xterm2
+    "set ttymouse=xterm2
 endif
 
 set clipboard=unnamedplus
@@ -57,7 +57,7 @@ if has('autocmd') && !exists('autocommands_loaded')
     autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType html setlocal ts=4 sts=4 sw=4 noexpandtab indentkeys-=*<return>
     autocmd FileType jade setlocal ts=2 sts=2 sw=2 noexpandtab
-    autocmd FileType *.md.js :call SyntasticReset<cr>
+    "autocmd FileType *.md.js :call SyntasticReset<cr>
     autocmd FileType markdown,textile setlocal textwidth=0 wrapmargin=0 wrap spell
     autocmd FileType .xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
     "autocmd WinEnter * setlocal cursorline
@@ -134,7 +134,7 @@ set encoding=utf8
 let base16colorspace=256  " Access colors present in 256 colorspace"
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
 execute "set background=".$BACKGROUND
-execute "colorscheme raggi"
+execute "colorscheme night-owl"
 
 " set number " show line numbers
 set number " show the current line number"
@@ -402,6 +402,7 @@ function! HtmlUnEscape()
   silent s/&amp;/\&/eg
 endfunction
 
+
 nnoremap <silent> <leader>u :call HtmlUnEscape()<cr>
 
 
@@ -436,14 +437,45 @@ nmap <silent><leader>gb :Gblame<cr>
 nmap <leader>m :MarkedOpen!<cr>
 nmap <leader>mq :MarkedQuit<cr>
 
-" toggle syntastic
-nmap <leader>s :SyntasticToggleMode<cr>
+" toggle syntastic (replacmed by neomake  below))
+"nmap <leader>s :SyntasticToggleMode<cr>
 
 " allow es5 mode when looking at TypeScript
-let g:syntastic_typescript_tsc_args = '--module amd --target ES5 --noImplicitAny'
-let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_typescript_checkers = ['tslint']
-let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+"let g:syntastic_typescript_tsc_args = '--module amd --target ES5 --noImplicitAny'
+"let g:syntastic_ruby_exec = '/usr/share/rvm/rubies/ruby-2.4.3/bin/ruby'
+"let g:syntastic_ruby_checkers = ['rubocop']
+"let g:syntastic_typescript_checkers = ['tslint']
+"let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
+autocmd! BufWritePost,BufEnter * Neomake
+" Async handling of plugin (neovim)
+" When writing a buffer (no delay).
+call neomake#configure#automake('w')
+" When writing a buffer (no delay), and on normal mode changes (after 750ms).
+call neomake#configure#automake('nw', 750)
+" When reading a buffer (after 1s), and when writing (no delay).
+call neomake#configure#automake('rw', 1000)
+" Full config: when writing or reading a buffer, and on changes in insert and
+" normal mode (after 1s; no delay when writing).
+call neomake#configure#automake('nrwi', 500)
+
+nmap <leader>s :lopen<cr>
+nmap [s :lnext<cr>
+let g:neomake_typescript_tsc_args = '--module amd --target ES5 --noImplicitAny'
+let g:neomake_ruby_exec = '/usr/share/rvm/rubies/ruby-2.4.3/bin/ruby'
+let g:neomake_ruby_checkers = ['rubocop']
+let g:neomake_python_checkers = ['flake8']
+let g:neomake_typescript_checkers = ['tslint']
+let g:neomake_javascript_checkers = ['jshint', 'jscs']
 
 " CtrlP ignore patterns
 " let g:ctrlp_custom_ignore = {
@@ -549,12 +581,12 @@ set splitright
 set autoread
 
 " alt shortcut in terminal
-let c='a'
-while c <= 'z'
-  exec "set <A-".c.">=\e".c
-  exec "imap \e".c." <A-".c.">"
-  let c = nr2char(1+char2nr(c))
-endw
+"let c='a'
+"while c <= 'z'
+  ""exec "set <A-".c.">=\e".c
+  "exec "imap \e".c." <A-".c.">"
+  "let c = nr2char(1+char2nr(c))
+"endw
 
 set timeout ttimeoutlen=50
 
@@ -585,7 +617,7 @@ nnoremap <silent> <leader>e :cnext<CR>
 nnoremap <silent> <leader>q :cprev<CR>
 
 " Unbind arrow keys
-for prefix in ['i', 'n', 'v']
+for prefix in [ 'i', 'n', 'v']
   for key in ['<Up>', '<Down>', '<Left>', '<Right>']
     exe prefix . "noremap " . key . " <Nop>"
   endfor
@@ -593,13 +625,13 @@ endfor
 
 " Youcompleteme
 let g:ycm_autoclose_preview_window_after_completion=1
-let g:EclimCompletionMethod = 'omnifunc'
 let g:ycm_confirm_extra_conf = 0
 
 " eclim mappings
-nnoremap <silent> <leader>1 :JavaCorrect<CR>
-nnoremap <silent> <leader>2 :JavaDocPreview<CR>
-nnoremap <silent> <leader>jr :Java<CR>
+"let g:EclimCompletionMethod = 'omnifunc'
+"nnoremap <silent> <leader>1 :JavaCorrect<CR>
+"nnoremap <silent> <leader>2 :JavaDocPreview<CR>
+"nnoremap <silent> <leader>jr :Java<CR>
 
 " easy motion options
 " leader for easy motion
@@ -607,3 +639,9 @@ map <space> <Plug>(easymotion-prefix)
 
 " Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
+
+" Python check (automatic, already done by syntastic)
+"autocmd BufWritePost *.py call Flake8()
+
+" Shortcut for autogen docstrings
+nmap <silent> <leader>pd <Plug>(pydocstring)
