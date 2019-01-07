@@ -177,6 +177,7 @@ fi
     alias m='f -e mplayer' # quick opening files with mplayer
     alias o='xdg-open' # quick opening files with xdg-open
     alias oa='a -e xdg-open' # quick opening files with xdg-open
+    alias vim='nvim'
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -187,4 +188,3 @@ export CUDA_HOME=/usr/local/cuda
 
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
-source /etc/profile.d/rvm.sh

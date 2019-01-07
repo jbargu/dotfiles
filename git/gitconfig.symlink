@@ -3,7 +3,7 @@
 	name = Jure Grabnar
 	email = jure.grabnar@gmail.com
 [github]
-    user = nicknisi
+    user = jbargu
 [init]
     templatedir = ~/.dotfiles/git/templates
 [alias]

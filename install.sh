@@ -8,22 +8,15 @@ cd ~
 
 echo "Install all required programs"
 
-echo "Installing tmux"
-sudo apt-get update -yqqu
-sudo apt-get install -yqqu python-software-properties software-properties-common
-sudo add-apt-repository -yu ppa:pi-rho/dev
-sudo apt-get update -yqqu
-sudo apt-get install -yqqu tmux
-
 echo "Install other programs: "
-sudo apt-get install vim-gnome git zsh wget xclip build-essential cmake python-dev python3-dev
+sudo apt-get install tmux vim-gnome git zsh wget xclip build-essential cmake python-dev python3-dev
 
-git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh
+git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-git clone https://github.com/clvv/fasd.git
+git clone https://github.com/clvv/fasd.git ~/.fasd
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/vundle
-cd ~/fasd
-make install
+cd ~/.fasd
+sudo make install
 cd ~
 
 
@@ -47,3 +40,7 @@ echo "Configuring zsh as default shell"
 chsh -s $(which zsh)
 
 echo "Done."
+
+# Install neovim https://neovim.io/doc/user/nvim.html#nvim-from-vim
+# if stdpath does not work, create it manually
+# https://neovim.io/doc/user/starting.html#config
