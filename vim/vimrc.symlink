@@ -251,6 +251,11 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+tnoremap <C-J> <C-\><C-N><C-W><C-J>
+tnoremap <C-K> <C-\><C-N><C-W><C-K>
+tnoremap <C-L> <C-\><C-N><C-W><C-L>
+tnoremap <C-H> <C-\><C-N><C-W><C-H>
+
 map <leader>wc :wincmd q<cr>
 
 " toggle cursor line
@@ -428,12 +433,6 @@ let g:ctrlp_map='<leader>t'
 let g:ctrlp_dotfiles=1
 let g:ctrlp_working_path_mode = 'ra'
 
-" Fugitive Shortcuts
-nmap <silent> <leader>gs :Gstatus<cr>
-nmap <leader>ge :Gedit<cr>
-nmap <silent><leader>gr :Gread<cr>
-nmap <silent><leader>gb :Gblame<cr>
-
 nmap <leader>m :MarkedOpen!<cr>
 nmap <leader>mq :MarkedQuit<cr>
 
@@ -604,7 +603,8 @@ let g:tagbar_autofocus = 1
 
 " Fugitive mappings
 nnoremap <silent> <leader>gs :Gstatus<CR>
-nnoremap <silent> <leader>gd :Gvdiff<CR>
+nnoremap <silent> <leader>gds :Gvdiff<CR>
+nnoremap <silent> <leader>gd :Git diff<CR>i
 nnoremap <silent> <leader>gv :Git diff --cached<CR>
 nnoremap <silent> <leader>gc :Gcommit<CR>
 nnoremap <silent> <leader>gb :Gblame<CR>
@@ -615,6 +615,17 @@ nnoremap <silent> <leader>gw :Gwrite<CR>
 nnoremap <silent> <leader>ge :Gedit<CR>
 nnoremap <silent> <leader>e :cnext<CR>
 nnoremap <silent> <leader>q :cprev<CR>
+
+" Git gutter mappings
+nmap <leader>ha <Plug>GitGutterStageHunk<CR>
+nmap <leader>hr <Plug>GitGutterUndoHunk<CR>
+
+" Ack, always look from the git root instead of current directory
+function! Find_git_root()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2] . "/app"
+endfunction
+
+command! -nargs=1 Ag execute "Ack! <args> " . Find_git_root()
 
 " Unbind arrow keys
 for prefix in [ 'i', 'n', 'v']
@@ -645,3 +656,7 @@ let g:EasyMotion_smartcase = 1
 
 " Shortcut for autogen docstrings
 nmap <silent> <leader>pd <Plug>(pydocstring)
+
+" Neovim terminal bindings
+" Escape from the terminal with ESC
+tnoremap <Esc> <C-\><C-n>

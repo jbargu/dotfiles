@@ -28,7 +28,7 @@ Bundle "heavenshell/vim-pydocstring"
 " Relative numbervs
 Bundle "myusuf3/numbers.vim"
 
-Bundle "Valloric/YouCompleteMe"
+"Bundle "Valloric/YouCompleteMe"
 Plugin 'easymotion/vim-easymotion'
 
 " ruby

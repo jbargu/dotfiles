@@ -20,8 +20,6 @@ alias git-undopush="git push -f origin HEAD^:master"
 # git root
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
 
-alias sub-pull='git submodule foreach git pull origin master'
-
 function give-credit() {
     git commit --amend --author $1 <$2> -C HEAD
 }
