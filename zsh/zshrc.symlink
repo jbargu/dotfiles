@@ -8,7 +8,7 @@ if [[ -d ~/code ]]; then
 fi
 
 # load all zsh config files
-for config ($ZSH_DOTFILES/**/*.zsh) source $config
+#for config ($ZSH_DOTFILES/**/*.zsh) source $config
 
 
 if [[ -a ~/.localrc ]]; then
@@ -24,8 +24,8 @@ if [[ -a /usr/local/bin/virtualenvwrapper.sh ]]; then
 fi
 
 # initialize autocomplete (speeds up if commented)
-#autoload -U compinit
-#compinit
+autoload -U compinit
+compinit
 
 export EDITOR='vim'
 
