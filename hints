@@ -6,7 +6,7 @@ Rename vundle and clone it
 - install powerline
 - add custom themes xclip
 - install tmuxifier
-
+- install direnv
 
 TMUX plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

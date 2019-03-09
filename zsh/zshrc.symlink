@@ -128,7 +128,7 @@ ZSH_THEME="amuse-custom"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bundler common-aliases docker sudo tmux vi-mode fasd github virtualenvwrapper)
+plugins=(git bundler common-aliases docker sudo tmux vi-mode fasd github)
 
 export ZSH_TMUX_AUTOSTART=true
 
@@ -144,3 +144,11 @@ alias git='hub'
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
 source /etc/profile.d/rvm.sh
+
+# Add anaconda to path
+export PATH="/home/jure/programs/anaconda3/bin:$PATH"
+
+# Load my plugins
+for config ($ZSH_DOTFILES/jure_plugins/*.zsh) source $config
+
+eval "$(direnv hook zsh)"
