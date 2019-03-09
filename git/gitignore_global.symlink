@@ -18,3 +18,5 @@ Icon
 
 # typescript command garbage
 tscommand*.txt
+
+.envrc
