@@ -7,6 +7,7 @@ Rename vundle and clone it
 - add custom themes xclip
 - install tmuxifier
 - install direnv
+- install googler (https://github.com/jarun/googler)
 
 TMUX plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

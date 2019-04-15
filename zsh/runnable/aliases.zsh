@@ -58,3 +58,11 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
     alias "$method"="lwp-request -m '$method'"
 done
+
+# googler
+alias so='googler -w stackoverflow.com'
+
+function soc () {
+  # --decription 'alias so=googler -j -w stackoverflow.com (xsel)'
+  googler -j -w stackoverflow.com $(xsel) $@
+}
