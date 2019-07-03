@@ -14,6 +14,7 @@ Bundle 'codegram/vim-codereview'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-obsession'
+Bundle 'vifm/vifm.vim'
 
 " Folding for python
 Bundle 'edkolev/tmuxline.vim'
