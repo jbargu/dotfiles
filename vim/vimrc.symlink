@@ -36,6 +36,11 @@ endif
 
 set clipboard=unnamedplus
 
+" Ack, always look from the git root instead of current directory
+function! Find_git_root()
+	return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+
 " faster redrawing
 set ttyfast
 
@@ -436,25 +441,6 @@ let g:ctrlp_working_path_mode = 'ra'
 nmap <leader>m :MarkedOpen!<cr>
 nmap <leader>mq :MarkedQuit<cr>
 
-" toggle syntastic (replacmed by neomake  below))
-"nmap <leader>s :SyntasticToggleMode<cr>
-
-" allow es5 mode when looking at TypeScript
-"let g:syntastic_typescript_tsc_args = '--module amd --target ES5 --noImplicitAny'
-"let g:syntastic_ruby_exec = '/usr/share/rvm/rubies/ruby-2.4.3/bin/ruby'
-"let g:syntastic_ruby_checkers = ['rubocop']
-"let g:syntastic_typescript_checkers = ['tslint']
-"let g:syntastic_javascript_checkers = ['jshint', 'jscs']
-
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-
 autocmd! BufWritePost,BufEnter * Neomake
 " Async handling of plugin (neovim)
 " When writing a buffer (no delay).
@@ -469,12 +455,13 @@ call neomake#configure#automake('nrwi', 500)
 
 nmap <leader>s :lopen<cr>
 nmap [s :lnext<cr>
-let g:neomake_typescript_tsc_args = '--module amd --target ES5 --noImplicitAny'
 let g:neomake_ruby_exec = '/usr/share/rvm/rubies/ruby-2.4.3/bin/ruby'
 let g:neomake_ruby_checkers = ['rubocop']
 let g:neomake_python_checkers = ['flake8']
-let g:neomake_typescript_checkers = ['tslint']
-let g:neomake_javascript_checkers = ['jshint', 'jscs']
+
+let g:neomake_javascript_checkers = ['eshint']
+let g:neomake_javascript_eslint_exe = Find_git_root() .'/node_modules/.bin/eslint'
+let g:neomake_scss_checkers = ['scss-lint']
 
 " CtrlP ignore patterns
 " let g:ctrlp_custom_ignore = {
@@ -620,12 +607,7 @@ nnoremap <silent> <leader>q :cprev<CR>
 nmap <leader>ha <Plug>GitGutterStageHunk<CR>
 nmap <leader>hr <Plug>GitGutterUndoHunk<CR>
 
-" Ack, always look from the git root instead of current directory
-function! Find_git_root()
-  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2] . "/app"
-endfunction
-
-command! -nargs=1 Ag execute "Ack! <args> " . Find_git_root()
+command! -nargs=1 Ag execute "Ack! <args> " . Find_git_root()  . "/app"
 
 " Unbind arrow keys
 for prefix in [ 'i', 'n', 'v']
