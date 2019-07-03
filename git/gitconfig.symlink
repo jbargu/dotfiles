@@ -1,6 +1,6 @@
 # gitconfig
 [user]
-	name = Jure Grabnar
+	name = jbargu
 	email = jure.grabnar@gmail.com
 [github]
     user = jbargu
@@ -55,10 +55,15 @@
     lt = describe --tags --abbrev=0
 
     # assume aliases
-    assume = update-index --assume-unchanged
-    unassume = update-index --no-assume-unchanged
-    assumed = "!git ls-files -v | grep ^h | cut -c 3-"
-    unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
+    #assume = update-index --assume-unchanged
+    #unassume = update-index --no-assume-unchanged
+    #assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+    #unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
+
+    # https://stackoverflow.com/questions/1753070/how-do-i-configure-git-to-ignore-some-files-locally
+    ignore = update-index --assume-unchanged
+    unignore = update-index --no-assume-unchanged
+    ignored = !git ls-files -v | grep "^[[:lower:]]"
 
     # grep commands
 
@@ -137,3 +142,8 @@
 	trustexitcode = true
 [merge]
 	tool = vimdiff
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
