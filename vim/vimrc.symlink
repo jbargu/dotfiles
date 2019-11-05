@@ -455,7 +455,7 @@ call neomake#configure#automake('nrwi', 500)
 
 nmap <leader>s :lopen<cr>
 nmap [s :lnext<cr>
-let g:neomake_ruby_exec = '/usr/share/rvm/rubies/ruby-2.4.3/bin/ruby'
+let g:neomake_ruby_exec = '/usr/share/rvm/rubies/ruby-2.6.4/bin/ruby'
 let g:neomake_ruby_checkers = ['rubocop']
 let g:neomake_python_checkers = ['flake8']
 
