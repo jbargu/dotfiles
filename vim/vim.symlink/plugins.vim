@@ -6,10 +6,6 @@ call vundle#begin()
 " let vundle manage vundle
 Plugin 'gmarik/vundle'
 
-" pull review
-Bundle 'junkblocker/patchreview-vim'
-Bundle 'codegram/vim-codereview'
-
 " added
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'terryma/vim-multiple-cursors'
@@ -30,7 +26,6 @@ Bundle "heavenshell/vim-pydocstring"
 Bundle "myusuf3/numbers.vim"
 
 "Bundle "Valloric/YouCompleteMe"
-Plugin 'easymotion/vim-easymotion'
 
 " ruby
 Plugin 'vim-ruby/vim-ruby'
@@ -39,10 +34,6 @@ Plugin 'vim-utils/vim-ruby-fold'
 " For selecting code inside do-blocks in ruby
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
-
-" Elixir
-Plugin 'slashmili/alchemist.vim'
-Plugin 'elixir-editors/vim-elixir'
 
 " utilities
 Plugin 'tpope/vim-rails'
@@ -65,7 +56,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'garbas/vim-snipmate'
-Plugin 'mattn/emmet-vim'
+Plugin 'mattn/emmet-vim' " HTML expand tags
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -85,7 +76,6 @@ Plugin 'vim-scripts/matchit.zip'
 Plugin 'gregsexton/MatchTag'
 Plugin 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)
 Plugin 'sickill/vim-pasta'
-Plugin 'junegunn/goyo.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'airblade/vim-gitgutter'
 
