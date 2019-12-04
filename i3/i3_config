@@ -162,6 +162,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl -- set-sink-mute @DEFAULT_SINK@
 exec --no-startup-id light-locker
 exec --no-startup-id megasync
 exec --no-startup-id thunderbird
+exec --no-startup-id redshift-gtk
 
 # Lock screen with ctrl + alt + L (xmodmap for alt keymap)
 bindsym --release Ctrl+mod1+L  exec --no-startup-id light-locker-command -l
