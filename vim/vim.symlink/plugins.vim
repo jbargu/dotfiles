@@ -122,6 +122,3 @@ filetype plugin indent on
 
 " Neovim
 Plugin 'neomake/neomake'
-
-" Spyware
-Plugin 'wakatime/vim-wakatime'
