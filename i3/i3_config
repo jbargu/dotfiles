@@ -150,6 +150,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
+# Change keyboard layout
+exec_always "setxkbmap -layout us,si -variant ,, -option grp:ctrls_toggle"
+
 # Remove title bars
 for_window [class="^.*"] border pixel 0
 
