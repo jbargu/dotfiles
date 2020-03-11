@@ -9,7 +9,10 @@ Plugin 'gmarik/vundle'
 " added
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'terryma/vim-multiple-cursors'
-Bundle 'tpope/vim-obsession'
+
+" Session management
+Plugin 'mhinz/vim-startify'
+
 Bundle 'vifm/vifm.vim'
 
 " Folding for python
@@ -66,7 +69,6 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'mtth/scratch.vim'
 Plugin 'itspriddle/vim-marked'
 Plugin 'tpope/vim-vinegar'
-Plugin 'ap/vim-css-color'
 Plugin 'davidoc/taskpaper.vim'
 Plugin 'tpope/vim-abolish'
 Plugin 'AndrewRadev/splitjoin.vim'
@@ -97,14 +99,16 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 " Plugin 'jason0x43/vim-js-syntax'
 " Plugin 'jason0x43/vim-js-indent'
+
+" CSS
 Plugin 'wavded/vim-stylus'
+Plugin 'ap/vim-css-color'
 Plugin 'groenewege/vim-less'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'juvenn/mustache.vim'
 Plugin 'moll/vim-node'
 Plugin 'elzr/vim-json'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'mxw/vim-jsx'
 Plugin 'cakebaker/scss-syntax.vim'
 " Plugin 'dart-lang/dart-vim-plugin'
 " Plugin 'kchmck/vim-coffee-script'
