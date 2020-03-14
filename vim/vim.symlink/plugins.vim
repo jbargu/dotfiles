@@ -15,7 +15,6 @@ Plugin 'mhinz/vim-startify'
 
 Bundle 'vifm/vifm.vim'
 
-" Folding for python
 Bundle 'edkolev/tmuxline.vim'
 Plugin 'chrisbra/csv.vim'
 
@@ -27,8 +26,6 @@ Bundle "heavenshell/vim-pydocstring"
 
 " Relative numbervs
 Bundle "myusuf3/numbers.vim"
-
-"Bundle "Valloric/YouCompleteMe"
 
 " ruby
 Plugin 'vim-ruby/vim-ruby'
@@ -55,7 +52,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'benmills/vimux'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'garbas/vim-snipmate'
@@ -73,7 +69,6 @@ Plugin 'davidoc/taskpaper.vim'
 Plugin 'tpope/vim-abolish'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'godlygeek/tabular'
-Plugin 'gbigwood/Clippo'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'gregsexton/MatchTag'
 Plugin 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)

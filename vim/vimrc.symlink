@@ -47,13 +47,6 @@ set ttyfast
 " highlight conflicts
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
-" latex box
-filetype plugin on
-let s:extfname = expand("%:e")
-if s:extfname ==? "tex"
-  let g:LatexBox_split_type="new"
-endif
-
 " file type specific settings
 if has('autocmd') && !exists('autocommands_loaded')
     let autocommands_loaded = 1
@@ -235,22 +228,12 @@ nnoremap tn  :tabnew<Space>
 nnoremap tm  :tabm<Space>
 nnoremap tc  :tabclose<CR>
 
-" Textmate style indentation
-vmap <leader>[ <gv
-vmap <leader>] >gv
-nmap <leader>[ <<
-nmap <leader>] >>
-
 " switch between current and last buffer
 nmap <leader>. <c-^>
 
 " enable . command in visual mode
 vnoremap . :normal .<cr>
 
-"map <silent> <C-h> :call WinMove('h')<cr>
-"map <silent> <C-j> :call WinMove('j')<cr>
-"map <silent> <C-k> :call WinMove('k')<cr>
-"map <silent> <C-l> :call WinMove('l')<cr>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -407,6 +390,17 @@ let g:ctrlp_map='<leader>t'
 let g:ctrlp_dotfiles=1
 let g:ctrlp_working_path_mode = 'ra'
 
+" CtrlP ignore patterns
+" let g:ctrlp_customnstal_ignore = {
+"             \ 'dir': '\.git$\|node_modules$\|bower_components$\|\.hg$\|\.svn$',
+"             \ 'file': '\.exe$\|\.so$'
+"             \ }
+" only show files that are not ignored by git
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+" search the nearest ancestor that contains .git, .hg, .svn
+let g:ctrlp_working_path_mode = 2
+
 nmap <leader>m :MarkedOpen!<cr>
 nmap <leader>mq :MarkedQuit<cr>
 
@@ -433,16 +427,12 @@ let g:neomake_javascript_checkers = ['eshint']
 let g:neomake_javascript_eslint_exe = Find_git_root() .'/node_modules/.bin/eslint'
 let g:neomake_scss_checkers = ['scss-lint']
 
-" CtrlP ignore patterns
-" let g:ctrlp_customnstal_ignore = {
-"             \ 'dir': '\.git$\|node_modules$\|bower_components$\|\.hg$\|\.svn$',
-"             \ 'file': '\.exe$\|\.so$'
-"             \ }
-" only show files that are not ignored by git
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
-" search the nearest ancestor that contains .git, .hg, .svn
-let g:ctrlp_working_path_mode = 2
+" latex box
+filetype plugin on
+let s:extfname = expand("%:e")
+if s:extfname ==? "tex"
+	let g:LatexBox_split_type="new"
+endif
 
 
 " airline options
@@ -585,26 +575,6 @@ for prefix in [ 'i', 'n', 'v']
     exe prefix . "noremap " . key . " <Nop>"
   endfor
 endfor
-
-" Youcompleteme
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_confirm_extra_conf = 0
-
-" eclim mappings
-"let g:EclimCompletionMethod = 'omnifunc'
-"nnoremap <silent> <leader>1 :JavaCorrect<CR>
-"nnoremap <silent> <leader>2 :JavaDocPreview<CR>
-"nnoremap <silent> <leader>jr :Java<CR>
-
-" easy motion options
-" leader for easy motion
-map <space> <Plug>(easymotion-prefix)
-
-" Turn on case insensitive feature
-let g:EasyMotion_smartcase = 1
-
-" Python check (automatic, already done by syntastic)
-"autocmd BufWritePost *.py call Flake8()
 
 " Shortcut for autogen docstrings
 nmap <silent> <leader>pd <Plug>(pydocstring)
