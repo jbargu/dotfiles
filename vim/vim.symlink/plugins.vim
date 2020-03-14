@@ -121,3 +121,4 @@ filetype plugin indent on
 
 " Neovim
 Plugin 'neomake/neomake'
+Plugin 'sbdchd/neoformat'
