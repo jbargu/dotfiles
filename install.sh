@@ -9,7 +9,7 @@ cd ~
 echo "Install all required programs"
 
 echo "Install other programs: "
-sudo apt-get install tmux vim-gnome git zsh wget xclip build-essential cmake python-dev python3-dev direnv
+sudo apt-get install tmux neovim git zsh wget xclip build-essential cmake python-dev python3-dev direnv rofi
 
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -44,3 +44,8 @@ echo "Done."
 # Install neovim https://neovim.io/doc/user/nvim.html#nvim-from-vim
 # if stdpath does not work, create it manually
 # https://neovim.io/doc/user/starting.html#config
+
+
+# install python-nvim
+sudo pip2 install --upgrade neovim
+sudo pip3 install --upgrade neovim
