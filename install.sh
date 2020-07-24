@@ -20,6 +20,7 @@ sudo make install
 cd ~
 
 
+
 # Install powerline font
 mkdir -p ~/.fonts/
 wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf -P ~/.fonts
@@ -49,3 +50,7 @@ echo "Done."
 # install python-nvim
 sudo pip2 install --upgrade neovim
 sudo pip3 install --upgrade neovim
+
+# Also install node
+npm install --global prettier
+npm install tslint typescript -g

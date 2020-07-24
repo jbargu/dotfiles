@@ -18,8 +18,10 @@ Bundle 'vifm/vifm.vim'
 Bundle 'edkolev/tmuxline.vim'
 Plugin 'chrisbra/csv.vim'
 
-" PEP8 for python
+" Python
 Bundle "nvie/vim-flake8"
+Plugin 'jpalardy/vim-slime'
+Plugin 'hanschen/vim-ipython-cell'
 
 " Auto generatee docstrings with CTRL+I
 Bundle "heavenshell/vim-pydocstring"
@@ -81,6 +83,8 @@ Plugin 'alvan/vim-closetag'
 
 " Ionic
 Plugin 'burnettk/vim-angular'
+Plugin 'posva/vim-vue'
+Plugin 'maxmellon/vim-jsx-pretty'
 
 " colorschemes
 Plugin 'chriskempson/base16-vim'
