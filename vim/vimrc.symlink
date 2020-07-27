@@ -407,8 +407,8 @@ let g:neomake_scss_checkers = ['scss-lint']
 
 " Neoformat - format automatically on save
 augroup fmt
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
+	autocmd!
+	au BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
 augroup END
 
 " latex box
