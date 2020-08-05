@@ -3,7 +3,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " load plugins from vundle
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/vim-plug
 source ~/.vim/plugins.vim
 
 " Abbreviations
@@ -90,6 +90,9 @@ set foldmethod=syntax " fold based on indent
 set foldnestmax=10 " deepest fold is 10 levels
 set nofoldenable " don't fold by default
 set foldlevel=1
+
+
+let g:python3_host_prog = '/usr/bin/python3.7'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => User Interface
