@@ -16,7 +16,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'chrisbra/csv.vim'
 
 " Python
-Plug 'nvie/vim-flake8'
+"Plug 'nvie/vim-flake8'
 Plug 'jpalardy/vim-slime'
 Plug 'hanschen/vim-ipython-cell'
 
@@ -29,14 +29,14 @@ Plug 'myusuf3/numbers.vim'
 " ruby
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-utils/vim-ruby-fold'
+Plug 'tpope/vim-rails'
+Plug 'ngmy/vim-rubocop'
 
 " For selecting code inside do-blocks in ruby
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 
 " utilities
-Plug 'tpope/vim-rails'
-Plug 'ngmy/vim-rubocop'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -61,7 +61,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'sotte/presenting.vim'
-Plug 'ervandew/supertab'
+"Plug 'ervandew/supertab'
 Plug 'tpope/vim-dispatch'
 Plug 'mtth/scratch.vim'
 Plug 'itspriddle/vim-marked'
@@ -76,6 +76,9 @@ Plug 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)
 Plug 'sickill/vim-pasta'
 Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
+
+" CoC
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " HTML
 Plug 'alvan/vim-closetag'

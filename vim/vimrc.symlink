@@ -430,13 +430,18 @@ endif
 let g:vim_json_syntax_conceal = 0
 
 
-let g:SuperTabCrMapping = 0
-
-
 call ApplyLocalSettings(expand('.'))
 
 " imports
 source ~/.vim/init/airline.vim
+source ~/.vim/init/coc.vim
+
+
+" Fix CoC issue with endwise (https://github.com/tpope/vim-endwise/issues/109#issuecomment-652793808)
+let g:endwise_no_mappings = v:true
+inoremap <expr> <Plug>CustomCocCR pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+imap <CR> <Plug>CustomCocCR<Plug>DiscretionaryEnd
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -457,9 +462,6 @@ map <M-x> <leader>c<space>
 
 " set current working directory
 set autochdir
-
-" set system clipboard
-set clipboard+=unnamedplus
 
 " colorscheme
 " IMPORTANT: Uncomment one of the following lines to force
