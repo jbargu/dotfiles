@@ -13,7 +13,7 @@ call neomake#configure#automake('nrwi', 500)
 let g:neomake_ruby_exec = '/usr/share/rvm/rubies/ruby-2.6.4/bin/ruby'
 let g:neomake_ruby_checkers = ['rubocop']
 let g:neomake_python_exe = ['python3']
-let g:neomake_python_checkers = ['flake8']
+"let g:neomake_python_checkers = ['flake8']
 
 let g:neomake_javascript_checkers = ['eshint']
 let g:neomake_javascript_eslint_exe = Find_git_root() .'/node_modules/.bin/eslint'

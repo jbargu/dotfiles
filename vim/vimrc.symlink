@@ -54,7 +54,6 @@ if has('autocmd') && !exists('autocommands_loaded')
     autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
     autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType html setlocal ts=4 sts=4 sw=4 noexpandtab indentkeys-=*<return>
-    autocmd FileType jade setlocal ts=2 sts=2 sw=2 noexpandtab
     "autocmd FileType *.md.js :call SyntasticReset<cr>
     autocmd FileType markdown,textile setlocal textwidth=0 wrapmargin=0 wrap spell
 		autocmd FileType python setlocal tw=0
@@ -106,7 +105,6 @@ set noshowmode " don't show which mode disabled for PowerLine
 set wildmode=list:longest " complete files like a shell
 set scrolloff=3 " lines of text around cursor
 set shell=$SHELL
-set cmdheight=1 " command bar height
 
 set title " set terminal title
 
@@ -269,8 +267,6 @@ nnoremap <silent> $ g$
 " search for word under the cursor
 nnoremap <leader>/ "fyiw :/<c-r>f<cr>
 
-" inoremap <tab> <c-r>=Smart_TabComplete()<CR>
-
 " helpers for dealing with other people's code
 nmap \t :set ts=4 sts=4 sw=4 noet<cr>
 nmap \s :set ts=4 sts=4 sw=4 et<cr>
@@ -280,22 +276,6 @@ nmap <leader>w :setf textile<cr> :Goyo<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Window movement shortcuts
-" move to the window in the direction shown, or create a new window
-"function! WinMove(key)
-    "let t:curwin = winnr()
-    "exec "wincmd ".a:key
-    "if (t:curwin == winnr())
-        "if (match(a:key,'[jk]'))
-            "wincmd v
-        "else
-            "wincmd s
-        "endif
-        "exec "wincmd ".a:key
-    "endif
-"endfunction
-
 " recursively search up from dirname, sourcing all .vimrc.local files along the way
 function! ApplyLocalSettings(dirname)
     " convert windows paths to unix style
@@ -315,27 +295,6 @@ function! ApplyLocalSettings(dirname)
     endif
 endfunction
 
-" smart tab completion
-function! Smart_TabComplete()
-    let line = getline('.')                         " current line
-
-    let substr = strpart(line, -1, col('.')+1)      " from the start of the current
-    " line to one character right
-    " of the cursor
-    let substr = matchstr(substr, '[^ \t]*$')       " word till cursor
-    if (strlen(substr)==0)                          " nothing to match on empty string
-        return '\<tab>'
-    endif
-    let has_period = match(substr, '\.') != -1      " position of period, if any
-    let has_slash = match(substr, '\/') != -1       " position of slash, if any
-    if (!has_period && !has_slash)
-        return '\<C-X>\<C-P>'                         " existing text matching
-    elseif ( has_slash )
-        return '\<C-X>\<C-F>'                         " file matching
-    else
-        return '\<C-X>\<C-O>'                         " plugin matching
-    endif
-endfunction
 
 function! HtmlUnEscape()
   silent s/&lt;/</eg
@@ -389,34 +348,9 @@ let g:ctrlp_working_path_mode = 2
 nmap <leader>m :MarkedOpen!<cr>
 nmap <leader>mq :MarkedQuit<cr>
 
-autocmd! BufWritePost,BufEnter * Neomake
-" Async handling of plugin (neovim)
-" When writing a buffer (no delay).
-call neomake#configure#automake('w')
-" When writing a buffer (no delay), and on normal mode changes (after 750ms).
-call neomake#configure#automake('nw', 750)
-" When reading a buffer (after 1s), and when writing (no delay).
-call neomake#configure#automake('rw', 1000)
-" Full config: when writing or reading a buffer, and on changes in insert and
-" normal mode (after 1s; no delay when writing).
-call neomake#configure#automake('nrwi', 500)
 
 nmap <leader>s :lopen<cr>
 nmap [s :lnext<cr>
-let g:neomake_ruby_exec = '/usr/share/rvm/rubies/ruby-2.6.4/bin/ruby'
-let g:neomake_ruby_checkers = ['rubocop']
-let g:neomake_python_exe = ['python3']
-let g:neomake_python_checkers = ['flake8']
-
-let g:neomake_javascript_checkers = ['eshint']
-let g:neomake_javascript_eslint_exe = Find_git_root() .'/node_modules/.bin/eslint'
-let g:neomake_scss_checkers = ['scss-lint']
-
-" Neoformat - format automatically on save
-augroup fmt
-	autocmd!
-	au BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
-augroup END
 
 " latex box
 filetype plugin on
@@ -435,6 +369,7 @@ call ApplyLocalSettings(expand('.'))
 " imports
 source ~/.vim/init/airline.vim
 source ~/.vim/init/coc.vim
+source ~/.vim/init/neomake.vim
 
 
 " Fix CoC issue with endwise (https://github.com/tpope/vim-endwise/issues/109#issuecomment-652793808)
@@ -447,8 +382,6 @@ imap <CR> <Plug>CustomCocCR<Plug>DiscretionaryEnd
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Mine
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-syntax on
-
 " vim-vue
 let g:vue_pre_processors = []
 
@@ -480,8 +413,6 @@ set t_Co=256
   "" regular :colorscheme command.
   "colorscheme sonofobsidian
 "endif
-
-set pastetoggle=<C-F11>
 
 " folding
 set foldnestmax=1

@@ -93,6 +93,9 @@ Plug 'chriskempson/base16-vim'
 Plug 'sheerun/vim-wombat-scheme'
 Plug 'junegunn/seoul256.vim'
 
+" solidity
+Plug 'TovarishFin/vim-solidity'
+
 " JavaScript
 Plug 'hail2u/vim-css3-syntax'
 Plug 'othree/html5.vim'
@@ -105,7 +108,6 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'wavded/vim-stylus'
 Plug 'ap/vim-css-color'
 Plug 'groenewege/vim-less'
-Plug 'digitaltoad/vim-jade'
 Plug 'juvenn/mustache.vim'
 Plug 'moll/vim-node'
 Plug 'elzr/vim-json'
