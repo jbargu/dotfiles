@@ -80,6 +80,10 @@ Plug 'airblade/vim-gitgutter'
 " CoC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" org mode
+Plug 'jceb/vim-orgmode'
+Plug 'vimwiki/vimwiki'
+
 " HTML
 Plug 'alvan/vim-closetag'
 
