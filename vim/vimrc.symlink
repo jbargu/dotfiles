@@ -474,8 +474,8 @@ nnoremap <silent> <leader>e :cnext<CR>
 nnoremap <silent> <leader>q :cprev<CR>
 
 " Git gutter mappings
-nmap <leader>ha <Plug>GitGutterStageHunk<CR>
-nmap <leader>hr <Plug>GitGutterUndoHunk<CR>
+nmap <leader>ha <Plug>(GitGutterStageHunk)<CR>
+nmap <leader>hr <Plug>(GitGutterUndoHunk)<CR>
 
 command! -nargs=1 Ag execute "Ack! <args> " . Find_git_root()  . "/app"
 
@@ -492,3 +492,8 @@ nmap <silent> <leader>pd <Plug>(pydocstring)
 " Neovim terminal bindings
 " Escape from the terminal with ESC
 tnoremap <Esc> <C-\><C-n>
+
+" vimviki
+
+let g:vimwiki_list = [{'path': '~/.vim/wiki/',
+		      \ 'syntax': 'markdown', 'ext': '.md'}]

@@ -117,6 +117,7 @@
 [diff]
     renames = copies
     mnemonicprefix = true
+	tool = vimdiff3
 [difftool]
     prompt = false
 [apply]
@@ -124,7 +125,7 @@
     whitespace = nowarn
 [core]
     excludesfile = ~/.gitignore_global
-    pager = less -FXRS -x2
+	pager = diff-so-fancy | less --tabs=4 -RFX
     editor = nvim
 [rerere]
     enabled = true
@@ -141,9 +142,15 @@
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustexitcode = true
 [merge]
-	tool = vimdiff
+	tool = vimdiff3
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[mergetool]
+	path = nvim
+[difftool "vimdiff3"]
+	path = nvim
+[mergetool "vimdiff3"]
+	path = nvim
