@@ -129,6 +129,9 @@ Plug 'fatih/vim-go'
 " Plug 'tclem/vim-arduino'
 Plug 'timcharper/textile.vim'
 
+" R
+Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
+
 " Neovim
 Plug 'neomake/neomake'
 Plug 'sbdchd/neoformat'
