@@ -94,6 +94,12 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+bindsym Mod1+Tab focus right
+bindsym Mod1+Shift+Tab focus left
+
+bindsym $mod+q [class="(?i)firefox"] focus
+bindsym $mod+x [class="(?i)terminal"] focus
+
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
