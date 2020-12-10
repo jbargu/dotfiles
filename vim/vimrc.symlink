@@ -497,3 +497,7 @@ tnoremap <Esc> <C-\><C-n>
 
 let g:vimwiki_list = [{'path': '~/.vim/wiki/',
 		      \ 'syntax': 'markdown', 'ext': '.md'}]
+
+let R_external_term = 1
+let R_silent_term = 1
+
