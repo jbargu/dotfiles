@@ -8,6 +8,9 @@ set -g history-limit 20000
 # automatically renumber tmux windows
 set -g renumber-windows on
 
+# Enable FocusGained event in vim
+set -g focus-events on
+
 # unbind default prefix and set it to Ctrl+a
 unbind C-b
 set -g prefix C-a
