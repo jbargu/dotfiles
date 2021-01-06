@@ -61,3 +61,9 @@ nnoremap <LocalLeader>d :SlimeSend1 %debug<CR>
 
 " map <LocalLeader>q to exit debug mode or IPython
 nnoremap <LocalLeader>q :SlimeSend1 exit<CR>
+
+" Shortcut for autogen docstrings
+let g:pydocstring_doq_path="/usr/local/bin/doq"
+let g:pydocstring_formatter = 'google'
+
+nmap <silent> <C-I> <Plug>(pydocstring)

@@ -12,7 +12,10 @@ Plug 'mhinz/vim-startify'
 
 Plug 'vifm/vifm.vim'
 
+" Tmux
 Plug 'edkolev/tmuxline.vim'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+
 Plug 'chrisbra/csv.vim'
 
 " Python
@@ -21,7 +24,7 @@ Plug 'jpalardy/vim-slime'
 Plug 'hanschen/vim-ipython-cell'
 
 " Auto generatee docstrings with CTRL+I
-Plug 'heavenshell/vim-pydocstring'
+Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 
 " Relative numbervs
 Plug 'myusuf3/numbers.vim'
@@ -134,5 +137,5 @@ Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 
 " Neovim
 Plug 'neomake/neomake'
-Plug 'sbdchd/neoformat'
+"Plug 'sbdchd/neoformat'
 call plug#end()
