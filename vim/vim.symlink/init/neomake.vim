@@ -20,7 +20,7 @@ let g:neomake_javascript_eslint_exe = Find_git_root() .'/node_modules/.bin/eslin
 let g:neomake_scss_checkers = ['scss-lint']
 
 " Neoformat - format automatically on save
-augroup fmt
-	autocmd!
-	au BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
-augroup END
+" augroup fmt
+"	autocmd!
+"	au BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
+" augroup END
