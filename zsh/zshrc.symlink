@@ -105,7 +105,7 @@ export PATH=${PATH}:~/programs/jdk1.8.0_201/bin
 
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
-source /etc/profile.d/rvm.sh
+#source /etc/profile.d/rvm.sh
 
 # Add anaconda to path
 export PATH="/home/jure/programs/anaconda3/bin:$PATH"
