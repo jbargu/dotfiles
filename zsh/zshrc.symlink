@@ -4,8 +4,6 @@ export ZSH_CUSTOM=$ZSH_DOTFILES/custom
 
 for config ($ZSH_DOTFILES/runnable/*.zsh) source $config
 
-source $ZSH_DOTFILES/config.zsh
-
 # initialize autocomplete (speeds up if commented)
 autoload -U compinit
 compinit
