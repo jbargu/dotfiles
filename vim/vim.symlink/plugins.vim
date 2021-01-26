@@ -9,6 +9,7 @@ Plug 'terryma/vim-multiple-cursors'
 
 " Session management
 Plug 'mhinz/vim-startify'
+Plug 'tpope/vim-obsession'
 
 Plug 'vifm/vifm.vim'
 
@@ -55,6 +56,8 @@ Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-surround'
 Plug 'benmills/vimux'
 Plug 'bling/vim-airline'
+" solarized theme
+Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
