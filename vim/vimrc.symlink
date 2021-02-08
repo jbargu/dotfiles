@@ -70,7 +70,7 @@ if has('autocmd') && !exists('autocommands_loaded')
 
     autocmd BufNewFile,BufRead *.ejs set filetype=html
     autocmd BufNewFile,BufRead *.ino set filetype=c
-		autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+    autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 
     " Turn off matching of brackets for HTML to prevent clashing with autoclose
     au FileType html let b:delimitMate_matchpairs = "(:),[:],{:}"
@@ -140,7 +140,7 @@ execute "set background=".$BACKGROUND
 execute "colorscheme night-owl-24bit"
 
 if (has("termguicolors"))
-set termguicolors
+	set termguicolors
 endif
 
 " set number " show line numbers
@@ -395,9 +395,6 @@ map <M-x> <leader>c<space>
 " set current working directory
 set autochdir
 
-" colorscheme
-set t_Co=256
-
 " folding
 set foldmethod=indent
 set foldlevel=99
@@ -444,8 +441,8 @@ let g:tagbar_autofocus = 1
 " Fugitive mappings
 nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gds :Gvdiff<CR>
-nnoremap <silent> <leader>gd :Git diff<CR>i
-nnoremap <silent> <leader>gv :Git diff --cached<CR>
+nnoremap <silent> <leader>gd :tab Git diff<CR>
+nnoremap <silent> <leader>gv :tab Git diff --cached<CR>
 nnoremap <silent> <leader>gc :Gcommit<CR>
 nnoremap <silent> <leader>gb :Gblame<CR>
 nnoremap <silent> <leader>gl :Glog<CR>
@@ -481,5 +478,6 @@ let g:vimwiki_list = [{'path': '~/.vim/wiki/',
 let R_external_term = 1
 let R_silent_term = 1
 
+let g:gruvbox_contrast_dark='medium'
+colorscheme gruvbox
 autocmd vimenter * ++nested colorscheme gruvbox
-let g:gruvbox_contrast_dark='hard'

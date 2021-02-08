@@ -1,0 +1,1 @@
+/home/jure/.dotfiles/vim/vim.symlink/vim-plug/gruvbox/colors/gruvbox.vim
