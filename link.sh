@@ -21,5 +21,5 @@ mkdir -p ~/.config/polybar
 ln -s ~/.dotfiles/i3/polybar/config ~/.config/polybar/config
 ln -s ~/.dotfiles/i3/polybar/launch.sh ~/.config/polybar/launch.sh
 
-ln -s ~/.dotfiles/flake8/config ~/.config/flake8
-ln -s ~/.dotfiles/xfce4/terminalrc ~/.config/xfce4/terminal/terminalrc
+ln -s ~/.dotfiles/.config/flake8 ~/.config/flake8
+ln -s ~/.dotfiles/.config/xfce4/terminal/terminalrc ~/.config/xfce4/terminal/terminalrc
