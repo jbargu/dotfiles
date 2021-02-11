@@ -11,8 +11,7 @@ for file in $linkables ; do
 done
 
 # NVIM configuration
-mkdir -p ~/.config/nvim
-ln -s ~/.dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
+ln -s ~/.dotfiles/.config/nvim/ ~/.config/nvim
 
 mkdir -p ~/.config/i3
 ln -s ~/.dotfiles/i3/i3_config ~/.config/i3/config
