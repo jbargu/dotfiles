@@ -34,7 +34,7 @@ wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols
 echo "Initializing submodule(s)"
 git submodule update --init --recursive
 
-source install/link.sh
+source link.sh
 
 echo "Configuring zsh as default shell"
 chsh -s $(which zsh)
