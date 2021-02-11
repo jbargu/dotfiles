@@ -14,7 +14,6 @@ sudo apt-get install tmux neovim git zsh wget xclip build-essential cmake python
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone https://github.com/clvv/fasd.git ~/.fasd
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/vundle
 cd ~/.fasd
 sudo make install
 cd ~
