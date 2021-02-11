@@ -10,6 +10,10 @@ for file in $linkables ; do
     ln -s $DOTFILES/$file $target
 done
 
+# NVIM configuration
+mkdir -p ~/.config/nvim
+ln -s ~/.dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
+
 mkdir -p ~/.config/i3
 ln -s ~/.dotfiles/i3/i3_config ~/.config/i3/config
 
