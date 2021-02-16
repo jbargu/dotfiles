@@ -72,6 +72,8 @@ if has('autocmd') && !exists('autocommands_loaded')
     autocmd BufNewFile,BufRead *.ino set filetype=c
     autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 
+		autocmd FileType rust set autochdir
+
     " Turn off matching of brackets for HTML to prevent clashing with autoclose
     au FileType html let b:delimitMate_matchpairs = "(:),[:],{:}"
 
@@ -339,14 +341,8 @@ let g:ctrlp_working_path_mode = 'ra'
 "             \ 'file': '\.exe$\|\.so$'
 "             \ }
 " only show files that are not ignored by git
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
-" search the nearest ancestor that contains .git, .hg, .svn
-let g:ctrlp_working_path_mode = 2
-
-nmap <leader>m :MarkedOpen!<cr>
-nmap <leader>mq :MarkedQuit<cr>
-
+"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 nmap <leader>s :lopen<cr>
 nmap [s :lnext<cr>
@@ -391,9 +387,6 @@ map <F4>  :!./a.out <CR>
 
 "commenting (NERD Commenter)
 map <M-x> <leader>c<space>
-
-" set current working directory
-set autochdir
 
 " folding
 set foldmethod=indent
@@ -481,3 +474,7 @@ let R_silent_term = 1
 let g:gruvbox_contrast_dark='medium'
 colorscheme gruvbox
 autocmd vimenter * ++nested colorscheme gruvbox
+
+" AoC
+map <F3> :!cargo run < example_input <CR>
+map <F4> :!cargo run < puzzle_input <CR>
