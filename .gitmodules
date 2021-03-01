@@ -3,10 +3,13 @@
 	url = git@github.com:chriskempson/base16-shell.git
 [submodule "zsh/custom/plugins/zsh-autosuggestions"]
 	path = zsh/custom/plugins/zsh-autosuggestions
-	url = git@github.com:zsh-users/zsh-autosuggestions.git
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
 [submodule "diff-so-fancy"]
 	path = diff-so-fancy
-	url = git@github.com:so-fancy/diff-so-fancy.git
+	url = https://github.com/so-fancy/diff-so-fancy.git
 [submodule "zsh/custom/plugins/zsh-syntax-highlighting"]
 	path = zsh/custom/plugins/zsh-syntax-highlighting
-	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "zsh/custom/plugins/history-search-multi-word"]
+	path = zsh/custom/plugins/history-search-multi-word
+	url = https://github.com/zdharma/history-search-multi-word.git
