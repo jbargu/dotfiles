@@ -87,7 +87,13 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 
 # history-search-multi-word plugin
-zstyle ":history-search-multi-word" highlight-color "bg=green"
+zstyle ":history-search-multi-word" highlight-color ""
+zstyle ":history-search-multi-word" page-size "4"  
+zstyle ":plugin:history-search-multi-word" active "bold"      
+
+# Repeat from above since multi history uses different
+typeset -gA HSMW_HIGHLIGHT_STYLES
+HSMW_HIGHLIGHT_STYLES[path]='fg=cyan'
 
 # diff-so-fancy
 export PATH=${PATH}:~/.dotfiles/diff-so-fancy
