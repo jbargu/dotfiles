@@ -44,12 +44,6 @@ fi
 # FASD
 eval "$(fasd --init auto)"
 
-# add hub (this is not needed if you install it, duh)
-export PATH="$HOME/Downloads/hub-linux-amd64-2.3.0-pre3/bin:$PATH"
-
-# source nvm
-export NVM_DIR=~/.nvm
-
 # Base16 Shell
 # if [ -z "$THEME" ]; then
 export THEME="base16-chalk"
