@@ -1,6 +1,17 @@
 {
   "python.formatting.provider": "black",
-  "coc.preferences.formatOnSaveFiletypes": ["rust", "python", "css", "html", "htmldjango", "javascript", "typescriptreact", "javascriptreact"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "rust",
+    "python",
+    "css",
+    "html",
+    "htmldjango",
+    "javascript",
+    "typescriptreact",
+    "javascriptreact",
+    "typescript",
+    "json"
+  ],
   "python.linting.enabled": false,
   "python.formatting.blackPath": "/usr/local/bin/black"
 }
