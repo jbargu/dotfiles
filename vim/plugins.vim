@@ -96,6 +96,7 @@ Plug 'mattn/emmet-vim' " HTML expand tags
 " formats
 Plug 'elzr/vim-json'
 Plug 'chrisbra/csv.vim'
+Plug 'cespare/vim-toml'
 
 " languages
 Plug 'tpope/vim-markdown'
