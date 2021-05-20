@@ -1,28 +1,11 @@
-Rename vundle and clone it
 
-- install xclip
-- set default running script as zsh (ohmyzsh runs tmux)
-- install tmux 2.0
-- install powerline
-- add custom themes xclip
-- install tmuxifier
-- install direnv
-- install googler (https://github.com/jarun/googler)
+# polybar
 
-TMUX plugin manager
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+- do not forget to install `libpulse` as well
+- https://github.com/polybar/polybar/wiki/Compiling
 
-# How to install powerline
-sudo apt-get install python-pip git
-sudo pip install git+git://github.com/Lokaltog/powerline
-
-wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
-https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
-mkdir -p ~/.fonts/ && mv PowerlineSymbols.otf ~/.fonts/
-fc-cache -vf ~/.fonts
-mkdir -p ~/.config/fontconfig/conf.d/ && mv 10-powerline-symbols.conf/
-
-- Have to install fasd
+# fasd
+Check that there is no `~/.fasd` folder otherwise the history won't work.
 
 - install hub
 
@@ -32,3 +15,9 @@ npm install --global prettier
 - install vim-plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+- setup monitors
+	- list with `xrandr` -> xrandr --output HDMI-1 --left-of DVI-I-1
+	- xrandr --output HDMI-1 --primary
+
+- install n: https://www.npmjs.com/package/n

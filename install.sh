@@ -9,13 +9,10 @@ cd ~
 echo "Install all required programs"
 
 echo "Install other programs: "
-sudo apt-get install tmux neovim git zsh wget xclip build-essential cmake python-dev python3-dev direnv rofi
+sudo apt-get install tmux neovim git hub zsh wget xclip build-essential cmake python-dev python3-dev direnv ripgrep rofi redshift-gtk fasd
 
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-git clone https://github.com/clvv/fasd.git ~/.fasd
-cd ~/.fasd
-sudo make install
 cd ~
 
 
@@ -26,6 +23,10 @@ wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
 fc-cache -vf ~/.fonts
 mkdir -p ~/.config/fontconfig/conf.d/
 wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf -P ~/.config/fontconfig/conf.d/
+
+# Plug.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
 # Install vim plugins - now manually

@@ -9,6 +9,8 @@ for file in $linkables ; do
     echo "creating symlink for $file"
     ln -s $DOTFILES/$file $target
 done
+# vim symlink
+ln -s ~/.dotfiles/vim ~/.vim
 
 # NVIM configuration
 ln -s ~/.dotfiles/.config/nvim/ ~/.config/nvim
@@ -22,3 +24,7 @@ ln -s ~/.dotfiles/i3/polybar/launch.sh ~/.config/polybar/launch.sh
 
 ln -s ~/.dotfiles/.config/flake8 ~/.config/flake8
 ln -s ~/.dotfiles/.config/xfce4/terminal/terminalrc ~/.config/xfce4/terminal/terminalrc
+ln -s ~/.dotfiles/.config/rofi ~/.config/rofi
+
+# Home
+ln -s ~/.dotfiles/home/.ripgreprc ~
