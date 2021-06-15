@@ -100,6 +100,9 @@ Plug 'cespare/vim-toml'
 
 " languages
 Plug 'tpope/vim-markdown'
+Plug 'ferrine/md-img-paste.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
 Plug 'fatih/vim-go'
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 Plug 'timcharper/textile.vim'
