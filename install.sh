@@ -28,6 +28,9 @@ wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+#  asdf
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1
+
 
 # Install vim plugins - now manually
 # Install hub: https://github.com/github/hub/releases
