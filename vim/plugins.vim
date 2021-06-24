@@ -23,6 +23,7 @@ Plug 'tpope/vim-surround'
 
 " git
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'mileszs/ack.vim'
