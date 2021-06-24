@@ -189,8 +189,14 @@ exec --no-startup-id redshift-gtk
 exec --no-startup-id xfce4-terminal
 exec --no-startup-id firefox
 
+exec_always --no-startup-id xfce4-power-manager
+
 # Lock screen with ctrl + alt + L (xmodmap for alt keymap)
-bindsym --release Ctrl+mod1+L  exec --no-startup-id i3lock -i ~/Downloads/background.png
+bindsym --release Ctrl+mod1+L  exec --no-startup-id xflock4
 
 # Set background image
 exec --no-startup-id feh --bg-scale ~/Downloads/background.png
+
+#for_window [class=".*"] move absolute position left
+floating_minimum_size 75 x 50
+floating_maximum_size 1280 x 960
