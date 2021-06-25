@@ -16,6 +16,9 @@ Plug 'myusuf3/numbers.vim'
 
 " utilities
 Plug 'kien/ctrlp.vim'
+" FZF (both needed)
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdcommenter'

@@ -9,11 +9,15 @@ cd ~
 echo "Install all required programs"
 
 echo "Install other programs: "
-sudo apt-get install tmux neovim git hub zsh wget xclip build-essential cmake python-dev python3-dev direnv ripgrep rofi redshift-gtk fasd
+sudo apt-get install tmux neovim git hub zsh wget xclip build-essential cmake python-dev python3-dev direnv ripgrep rofi redshift-gtk fasd bat
 
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 cd ~
+
+# Install FZF
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
 
 

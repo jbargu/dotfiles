@@ -65,18 +65,10 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="amuse-custom"
 
 # zsh-syntax-highlighting must be the last one sourced
-plugins=(git bundler common-aliases colored-man-pages docker sudo tmux vi-mode fasd github history-search-multi-word zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git bundler common-aliases colored-man-pages docker sudo tmux vi-mode fasd fzf github history-search-multi-word zsh-autosuggestions zsh-syntax-highlighting)
 
 export ZSH_TMUX_AUTOSTART=true
-
 source $ZSH/oh-my-zsh.sh
-
-alias v='f -e vim' # quick opening files with vim
-alias m='f -e mplayer' # quick opening files with mplayer
-alias o='xdg-open' # quick opening files with xdg-open
-alias oa='a -e xdg-open' # quick opening files with xdg-open
-alias vim='nvim'
-alias git='hub'
 
 # Autosuggest plugin
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=101"
@@ -88,12 +80,19 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 
 # history-search-multi-word plugin
 zstyle ":history-search-multi-word" highlight-color ""
-#zstyle ":history-search-multi-word" page-size "4"  
 zstyle ":plugin:history-search-multi-word" active "bold"      
 
 # Repeat from above since multi history uses different
 typeset -gA HSMW_HIGHLIGHT_STYLES
 HSMW_HIGHLIGHT_STYLES[path]='fg=cyan'
+
+# FZF
+export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
+export FZF_DEFAULT_OPTS='--no-height --no-reverse'
+export FZF_CTRL_T_OPTS="--preview 'batcat --style=numbers --color=always --line-range :500 {} | head -200'"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # diff-so-fancy
 export PATH=${PATH}:~/.dotfiles/diff-so-fancy
@@ -135,3 +134,5 @@ function conda() {
   fi
   unset __conda_setup
 }
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
