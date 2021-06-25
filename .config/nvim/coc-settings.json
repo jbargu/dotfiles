@@ -12,6 +12,5 @@
     "typescript",
     "json"
   ],
-  "python.linting.enabled": false,
-  "python.formatting.blackPath": "/usr/local/bin/black"
+  "python.linting.enabled": false
 }
