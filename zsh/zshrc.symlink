@@ -1,73 +1,40 @@
+# Variables
+export EDITOR='nvim'
 export DOTFILES=$HOME/.dotfiles
 export ZSH_DOTFILES=$DOTFILES/zsh
 export ZSH_CUSTOM=$ZSH_DOTFILES/custom
+export ZSH=$HOME/.oh-my-zsh
 
 for config ($ZSH_DOTFILES/runnable/*.zsh) source $config
 
-# initialize autocomplete (speeds up if commented)
-autoload -U compinit
-compinit
-
-export EDITOR='nvim'
-
-export PATH=/usr/local/bin:$PATH
-
-stty icrnl
-
-# ripgrep
-export RIPGREP_CONFIG_PATH=~/.ripgreprc
-
-# android
-export PATH=/home/jure/Android/Sdk/platform-tools:$PATH
-export PATH=/home/jure/Android/Sdk/tools:$PATH
-
-# add /usr/local/sbin
-if [[ -d /usr/local/sbin ]]; then
-  export PATH=/usr/local/sbin:$PATH
-fi
-
 # adding path directory for custom scripts
 export PATH=$DOTFILES/bin:$PATH
+export PATH=/usr/local/bin:$PATH
 
 # check for custom bin directory and add to path
 if [[ -d ~/bin ]]; then
   export PATH=~/bin:$PATH
 fi
 
-[ -z "$TMUX" ] && export TERM=xterm-256color
-
 # alias git to hub
 if hash hub 2>/dev/null; then
   eval "$(hub alias -s)"
 fi
 
-# FASD
-eval "$(fasd --init auto)"
+export PATH=${PATH}:~/.dotfiles/diff-so-fancy
+export RIPGREP_CONFIG_PATH=~/.ripgreprc
 
-# ASDF init
-. $HOME/.asdf/asdf.sh
+# initialize autocomplete (speeds up if commented)
+autoload -U compinit
+compinit
 
-# Base16 Shell
-# if [ -z "$THEME" ]; then
-export THEME="base16-chalk"
-# fi
-if [ -z "$BACKGROUND" ]; then
-  export BACKGROUND="dark"
-fi
-
-# Add backward history search
-bindkey "^R" history-incremental-search-backward
-
-######################### OH MY ZSH #######################
-#Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-
+# Oh my zsh configuration
+export ZSH_TMUX_AUTOSTART=true
 ZSH_THEME="amuse-custom"
 
 # zsh-syntax-highlighting must be the last one sourced
-plugins=(git bundler common-aliases colored-man-pages docker sudo tmux vi-mode fasd fzf github history-search-multi-word zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git bundler common-aliases colored-man-pages docker sudo tmux vi-mode fasd github history-search-multi-word zsh-autosuggestions zsh-syntax-highlighting)
 
-export ZSH_TMUX_AUTOSTART=true
 source $ZSH/oh-my-zsh.sh
 
 # Autosuggest plugin
@@ -86,6 +53,12 @@ zstyle ":plugin:history-search-multi-word" active "bold"
 typeset -gA HSMW_HIGHLIGHT_STYLES
 HSMW_HIGHLIGHT_STYLES[path]='fg=cyan'
 
+# FASD
+eval "$(fasd --init auto)"
+
+# ASDF init
+. $HOME/.asdf/asdf.sh
+
 # FZF
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
 export FZF_DEFAULT_OPTS='--no-height --no-reverse'
@@ -94,32 +67,19 @@ export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 
-# diff-so-fancy
-export PATH=${PATH}:~/.dotfiles/diff-so-fancy
+# Load FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Overwrite FZF backward history search
+bindkey "^R" history-search-multi-word
+
+# Terminal intricacies
+[ -z "$TMUX" ] && export TERM=xterm-256color
+stty icrnl
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
-#source /etc/profile.d/rvm.sh
-
-export PATH=/usr/local/cuda-11.0/bin:/usr/local/cuda-10.2/NsightCompute-2019.1${PATH:+:${PATH}}
-
 
 eval "$(direnv hook zsh)"
 
-# Lazy load conda
-function conda() {
-  # !! Contents within this block are managed by 'conda init' !!
-  __conda_setup="$('/home/jure/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-  if [ $? -eq 0 ]; then
-      eval "$__conda_setup"
-  else
-      if [ -f "/home/jure/miniconda3/etc/profile.d/conda.sh" ]; then
-          . "/home/jure/miniconda3/etc/profile.d/conda.sh"
-      else
-          export PATH="/home/jure/miniconda3/bin:$PATH"
-      fi
-  fi
-  unset __conda_setup
-}
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Load local env scripts
+source $DOTFILES/zsh/local_env.zsh
