@@ -333,6 +333,12 @@ nmap <silent> <leader>k :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
 nmap <silent> <leader>y :NERDTreeFind<cr>
 
+"commenting (NERD Commenter)
+nmap <M-x> <plug>NERDCommenterToggle
+xmap <M-x> <plug>NERDCommenterToggle
+
+let g:NERDCreateDefaultMappings=0
+
 " map fuzzyfinder (CtrlP) plugin
 " nmap <silent> <leader>t :CtrlP<cr>
 nmap <silent> <leader>r :CtrlPBuffer<cr>
@@ -385,10 +391,6 @@ let g:vue_pre_processors = []
 map <F2> mm ggVG== 'm zz :w<CR>
 map <F3> :!g++ -O2 "%:p" -lpthread -lrt -fopenmp<CR>
 map <F4>  :!./a.out <CR>
-
-"commenting (NERD Commenter)
-map <M-x> <leader>c<space>
-let g:NERDCreateDefaultMappings=0
 
 " folding
 set foldmethod=indent
