@@ -340,14 +340,10 @@ let g:ctrlp_map='<leader>t'
 let g:ctrlp_dotfiles=1
 let g:ctrlp_working_path_mode = 'ra'
 
-" CtrlP ignore patterns
-" let g:ctrlp_customnstal_ignore = {
-"             \ 'dir': '\.git$\|node_modules$\|bower_components$\|\.hg$\|\.svn$',
-"             \ 'file': '\.exe$\|\.so$'
-"             \ }
-" only show files that are not ignored by git
-"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+if executable('rg')
+  let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob ""'
+endif
 
 nmap <leader>s :lopen<cr>
 nmap [s :lnext<cr>
@@ -392,6 +388,7 @@ map <F4>  :!./a.out <CR>
 
 "commenting (NERD Commenter)
 map <M-x> <leader>c<space>
+let g:NERDCreateDefaultMappings=0
 
 " folding
 set foldmethod=indent

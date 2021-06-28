@@ -115,7 +115,7 @@ Plug 'timcharper/textile.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-utils/vim-ruby-fold'
 Plug 'tpope/vim-rails'
-Plug 'ngmy/vim-rubocop'
+"Plug 'ngmy/vim-rubocop'
 
 " For selecting code inside do-blocks in ruby
 Plug 'kana/vim-textobj-user'
