@@ -91,7 +91,7 @@ endif
 augroup tmux
   autocmd!
   if exists('$TMUX')
-    autocmd BufReadPost,FileReadPost,BufNewFile,BufEnter,FocusGained * call system("tmux rename-window 'vim | " . expand("%:t") . "'")
+    autocmd BufReadPost,FileReadPost,BufNewFile,BufEnter,FocusGained * call system("tmux rename-window '" . expand("%:t") . "'")
     autocmd VimLeave * call system("tmux rename-window 'tmux'")
   endif
 augroup END
@@ -442,6 +442,7 @@ nnoremap <silent> <leader>gd :tab Git diff<CR>
 nnoremap <silent> <leader>gv :tab Git diff --cached<CR>
 nnoremap <silent> <leader>gc :Gcommit<CR>
 nnoremap <silent> <leader>gb :Gblame<CR>
+nnoremap <silent> <leader>gh :GBrowse<CR>
 nnoremap <silent> <leader>gl :Glog<CR>
 nnoremap <silent> <leader>gp :Git push<CR>
 nnoremap <silent> <leader>gr :Gread<CR>
@@ -465,7 +466,11 @@ endfor
 
 " Neovim terminal bindings
 " Escape from the terminal with ESC
-tnoremap <Esc> <C-\><C-n>
+" https://github.com/junegunn/fzf.vim/issues/544
+if has("nvim")
+  au TermOpen * tnoremap <buffer> <Esc> <c-\><c-n>
+  au FileType fzf tunmap <buffer> <Esc>
+endif
 
 " vimviki
 
