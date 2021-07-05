@@ -30,7 +30,8 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -173,8 +174,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume @DEFA
 bindsym XF86AudioMute exec --no-startup-id pactl -- set-sink-mute @DEFAULT_SINK@ toggle # mute sound
 
 # Move windows to corresponding workspaces
-assign [class="xfce4-terminal"] 1
-#assign [class="Firefox"] 2
+assign [class="kitty"] 1
 assign [class="Mail"] 10
 
 exec --no-startup-id i3-msg 'workspace 10; exec thunderbird; workspace 1'
@@ -185,12 +185,14 @@ workspace_layout tabbed
 exec --no-startup-id light-locker
 exec --no-startup-id megasync
 #exec --no-startup-id thunderbird
-exec --no-startup-id redshift-gtk
-exec --no-startup-id xfce4-terminal
+exec --no-startup-id redshift
+exec --no-startup-id kitty
 exec --no-startup-id firefox
 
 exec_always --no-startup-id xfce4-power-manager
 exec_always --no-startup-id dunst # notification daemon
+exec_always --no-startup-id jack_control start
+exec_always --no-startup-id pactl set-default-sink jack_out
 
 # Lock screen with ctrl + alt + L (xmodmap for alt keymap)
 bindsym --release Ctrl+mod1+L  exec --no-startup-id xflock4
@@ -201,3 +203,7 @@ exec --no-startup-id feh --bg-scale ~/Downloads/background.png
 #for_window [class=".*"] move absolute position left
 floating_minimum_size 75 x 50
 floating_maximum_size 1280 x 960
+
+# switch user
+# dm-tool switch-to-greeter
+#

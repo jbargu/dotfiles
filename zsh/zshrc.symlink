@@ -1,5 +1,6 @@
 # Variables
 export EDITOR='nvim'
+export TERMINAL='kitty'
 export DOTFILES=$HOME/.dotfiles
 export ZSH_DOTFILES=$DOTFILES/zsh
 export ZSH_CUSTOM=$ZSH_DOTFILES/custom
