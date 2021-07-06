@@ -443,13 +443,14 @@ nnoremap <silent> <leader>gv :tab Git diff --cached<CR>
 nnoremap <silent> <leader>gc :Gcommit<CR>
 nnoremap <silent> <leader>gb :Gblame<CR>
 nnoremap <silent> <leader>gh :GBrowse<CR>
-nnoremap <silent> <leader>gl :Glog<CR>
+nnoremap <silent> <leader>gl :0Gclog<CR>
 nnoremap <silent> <leader>gp :Git push<CR>
 nnoremap <silent> <leader>gr :Gread<CR>
 nnoremap <silent> <leader>gw :Gwrite<CR>
 nnoremap <silent> <leader>ge :Gedit<CR>
-nnoremap <silent> <leader>e :cnext<CR>
-nnoremap <silent> <leader>q :cprev<CR>
+
+" Remove current buffer
+nnoremap <silent> <leader>q :bd<CR>
 
 " Git gutter mappings
 nmap <leader>ha <Plug>(GitGutterStageHunk)<CR>
