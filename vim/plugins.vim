@@ -12,7 +12,6 @@ Plug 'aymericbeaumet/vim-symlink'
 
 " Tmux
 Plug 'edkolev/tmuxline.vim'
-Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " Relative numbervs
 Plug 'myusuf3/numbers.vim'
