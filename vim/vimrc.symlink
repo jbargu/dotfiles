@@ -466,7 +466,7 @@ let g:vimwiki_list = [{'path': '~/.vim/wiki/',
 let R_external_term = 1
 let R_silent_term = 1
 
-let g:gruvbox_contrast_dark='medium'
+let g:gruvbox_contrast_dark='soft'
 colorscheme gruvbox
 autocmd vimenter * ++nested colorscheme gruvbox
 

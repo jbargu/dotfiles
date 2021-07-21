@@ -22,7 +22,6 @@ if hash hub 2>/dev/null; then
   eval "$(hub alias -s)"
 fi
 
-export PATH=${PATH}:~/.dotfiles/diff-so-fancy
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 
 # initialize autocomplete (speeds up if commented)
