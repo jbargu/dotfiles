@@ -30,3 +30,6 @@ ln -s ~/.dotfiles/.config/kitty ~/.config/kitty
 
 # Home
 ln -s ~/.dotfiles/home/.ripgreprc ~
+
+# ipython
+ln -s ~/.dotfiles/links/.ipython/profile_default/ipython_config.py ~/.ipython/profile_default/ipython_config.py
