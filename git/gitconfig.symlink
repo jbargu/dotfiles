@@ -155,13 +155,14 @@
 [interactive]
     diffFilter = delta --color-only
 [delta]
+    features = line-numbers
     whitespace-error-style = green
     plus-empty-line-marker-style = bold green
     syntax-theme = gruvbox-dark
-    file-decoration-style = yellow box
+    file-decoration-style = yellow ul ol
     file-style = yellow bold
     hunk-header-style = none
     hunk-header-decoration-style = none
 
     plus-style = syntax "#004800"
-    minus-style = syntax "#5f0001"
+    minus-style = syntax "#832b30"
