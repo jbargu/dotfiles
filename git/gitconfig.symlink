@@ -166,3 +166,5 @@
 
     plus-style = syntax "#004800"
     minus-style = syntax "#832b30"
+    minus-emph-style  = syntax "#ff0000"
+    plus-emph-style  = syntax "#00af00"
