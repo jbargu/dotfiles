@@ -17,7 +17,6 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 " Relative numbervs
 Plug 'myusuf3/numbers.vim'
 
-" utilities
 " telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -26,35 +25,24 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-surround'
 
 " git
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 
-Plug 'Raimondi/delimitMate'
-Plug 'tpope/vim-commentary'
+" utilities
 Plug 'tpope/vim-unimpaired'
+Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-ragtag'
-Plug 'benmills/vimux'
-Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-repeat'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'sotte/presenting.vim'
 Plug 'tpope/vim-dispatch'
-Plug 'mtth/scratch.vim'
-Plug 'itspriddle/vim-marked'
 Plug 'tpope/vim-vinegar'
 Plug 'davidoc/taskpaper.vim'
 Plug 'tpope/vim-abolish'
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'godlygeek/tabular'
 Plug 'vim-scripts/matchit.zip'
-Plug 'gregsexton/MatchTag'
 Plug 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)
 Plug 'sickill/vim-pasta'
 Plug 'majutsushi/tagbar'
@@ -63,12 +51,12 @@ Plug 'majutsushi/tagbar'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-" org mode
+" vim wiki
 Plug 'vimwiki/vimwiki'
+Plug 'sotte/presenting.vim'
 
 " colorschemes
-Plug 'sheerun/vim-wombat-scheme'
-Plug 'junegunn/seoul256.vim'
+Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
 
@@ -100,6 +88,7 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'othree/html5.vim'
 Plug 'alvan/vim-closetag'
 Plug 'mattn/emmet-vim' " HTML expand tags
+Plug 'gregsexton/MatchTag'
 
 " formats
 Plug 'elzr/vim-json'
@@ -111,7 +100,10 @@ Plug 'tpope/vim-markdown'
 Plug 'ferrine/md-img-paste.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
+" go
 Plug 'fatih/vim-go'
+
+" latex
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 Plug 'timcharper/textile.vim'
 
@@ -119,14 +111,12 @@ Plug 'timcharper/textile.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-utils/vim-ruby-fold'
 Plug 'tpope/vim-rails'
-"Plug 'ngmy/vim-rubocop'
 
 " For selecting code inside do-blocks in ruby
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 
 " Python
-"Plug 'nvie/vim-flake8'
 Plug 'jpalardy/vim-slime'
 Plug 'hanschen/vim-ipython-cell'
 
