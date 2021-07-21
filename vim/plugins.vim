@@ -6,6 +6,7 @@ Plug 'terryma/vim-multiple-cursors'
 " Session management
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-obsession'
+Plug 'thaerkh/vim-workspace'
 
 " Tmux
 Plug 'edkolev/tmuxline.vim'

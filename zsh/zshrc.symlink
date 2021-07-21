@@ -13,8 +13,8 @@ export PATH=$DOTFILES/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
 # check for custom bin directory and add to path
-if [[ -d ~/bin ]]; then
-  export PATH=~/bin:$PATH
+if [[ -d ~/.local/bin ]]; then
+  export PATH=~/.local/bin:$PATH
 fi
 
 # alias git to hub
