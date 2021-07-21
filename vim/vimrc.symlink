@@ -8,20 +8,33 @@ source ~/.vim/plugins.vim
 
 " Abbreviations
 set nocompatible " not compatible with vi
-set autoread " detect when a file is changed
 
 " make backspace behave in a sane manner
 set backspace=indent,eol,start
+
+" Escape from the terminal with ESC
+" https://github.com/junegunn/fzf.vim/issues/544
+if has("nvim")
+  au TermOpen * tnoremap <buffer> <Esc> <c-\><c-n>
+  au FileType fzf tunmap <buffer> <Esc>
+endif
+
+" Unbind arrow keys
+for prefix in [ 'i', 'n', 'v']
+  for key in ['<Up>', '<Down>', '<Left>', '<Right>']
+    exe prefix . "noremap " . key . " <Nop>"
+  endfor
+endfor
 
 " set a map leader for more key combos
 let mapleader = ','
 let g:mapleader = ','
 
 set history=1000 " change history to 1000
-set textwidth=80
 
 " Tab control
 filetype plugin indent on
+set textwidth=0
 set noexpandtab " insert tabs rather than spaces for <Tab>
 set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
 set tabstop=2 " the visible width of tabs
@@ -29,18 +42,14 @@ set softtabstop=2 " edit as if the tabs are 4 characters wide
 set shiftwidth=2 " number of spaces to use for indent and unindent
 set shiftround " round indent to a multiple of 'shiftwidth'
 set completeopt+=longest
+set timeout ttimeoutlen=50
+set autoread " detect when a file is changed
 
 if has('mouse')
     set mouse=a
-    "set ttymouse=xterm2
 endif
 
 set clipboard=unnamedplus
-
-" Ack, always look from the git root instead of current directory
-function! Find_git_root()
-	return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
-endfunction
 
 " faster redrawing
 set ttyfast
@@ -55,11 +64,8 @@ if has('autocmd') && !exists('autocommands_loaded')
     autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
     autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType html setlocal ts=4 sts=4 sw=4 noexpandtab indentkeys-=*<return>
-    "autocmd FileType *.md.js :call SyntasticReset<cr>
     autocmd FileType markdown,textile setlocal textwidth=0 wrapmargin=0 wrap spell
-		autocmd FileType python setlocal tw=0
-    "autocmd WinEnter * setlocal cursorline
-    "autocmd WinLeave * setlocal nocursorline
+    autocmd FileType python setlocal tw=0
 
     " automatically resize panes on resize
     autocmd VimResized * exe 'normal! \<c-w>='
@@ -72,7 +78,7 @@ if has('autocmd') && !exists('autocommands_loaded')
     autocmd BufNewFile,BufRead *.ino set filetype=c
     autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 
-		autocmd FileType rust set autochdir
+    autocmd FileType rust set autochdir
 
     " Turn off matching of brackets for HTML to prevent clashing with autoclose
     au FileType html let b:delimitMate_matchpairs = "(:),[:],{:}"
@@ -83,8 +89,6 @@ if has('autocmd') && !exists('autocommands_loaded')
 
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
     let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'stylus', 'html']
-
-    " autocmd! BufEnter * call ApplyLocalSettings(expand('<afile>:p:h'))
 endif
 
 " Setup renaming of tmux statusbar when switching
@@ -96,21 +100,25 @@ augroup tmux
   endif
 augroup END
 
-
 let g:python3_host_prog = '/usr/bin/python3.8'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => User Interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+let g:gruvbox_contrast_dark='soft'
+colorscheme gruvbox
+autocmd vimenter * ++nested colorscheme gruvbox
+
 set so=7 " set 7 lines to the cursors - when moving vertical
 set wildmenu " enhanced command line completion
 set hidden " current buffer can be put into background
 set showcmd " show incomplete commands
 set noshowmode " don't show which mode disabled for PowerLine
-set wildmode=list:longest " complete files like a shell
+set wildmode=full " complete files like a shell
 set scrolloff=3 " lines of text around cursor
 set shell=$SHELL
+set splitright
 
 set title " set terminal title
 
@@ -120,6 +128,7 @@ set smartcase " case-sensitive if expresson contains a capital letter
 set hlsearch
 set incsearch " set incremental search, like modern browsers
 set nolazyredraw " don't redraw while executing macros
+set laststatus=2 " show the satus line all the time
 
 set magic " Set magic on, for regex
 
@@ -132,17 +141,15 @@ set visualbell
 set t_vb=
 set tm=500
 
-" switch syntax highlighting on
+
 syntax on
 
 set encoding=utf8
 let base16colorspace=256  " Access colors present in 256 colorspace"
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
-execute "set background=".$BACKGROUND
-execute "colorscheme night-owl-24bit"
 
 if (has("termguicolors"))
-	set termguicolors
+  set termguicolors
 endif
 
 " set number " show line numbers
@@ -156,44 +163,24 @@ set showbreak=… " show ellipsis at breaking
 set autoindent " automatically set indent of new line
 set smartindent
 
+" folding
+set foldlevel=99
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+map <M-c> za
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups, and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"set nobackup
-"set nowritebackup
-"set noswapfile
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => StatusLine
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set laststatus=2 " show the satus line all the time
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General mappings/shortcuts for functionality
-" Additional, plugin-specific mappings are located under
-" the plugins section
-
-" Close the current buffer
-" noremap <C-x> :q<cr>
-
 " remap esc
 inoremap jk <esc>
-
-" markdown to html
-nmap <leader>md :%!markdown --html4tags <cr>
-
-" paste images from clipboard to markdown (https://github.com/ferrine/md-img-paste.vim)
-autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
-" there are some defaults for image directory and image name, you can change them
-" let g:mdip_imgdir = 'img'
-" let g:mdip_imgname = 'image'
 
 " remove extra whitespace
 nmap <leader><space> :%s/\s\+$<cr>
@@ -209,9 +196,6 @@ noremap Q <NOP>
 
 " set paste toggle
 set pastetoggle=<F6>
-
-" toggle paste mode
-map <leader>v :set paste!<cr>
 
 " edit ~/.vimrc
 map <leader>ev :e! ~/.vimrc<cr>
@@ -282,46 +266,21 @@ nmap <leader>w :setf textile<cr> :Goyo<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" recursively search up from dirname, sourcing all .vimrc.local files along the way
-function! ApplyLocalSettings(dirname)
-    " convert windows paths to unix style
-    let l:curDir = substitute(a:dirname, '\\', '/', 'g')
-
-    " walk to the top of the dir tree
-    let l:parentDir = strpart(l:curDir, 0, strridx(l:curDir, '/'))
-    if isdirectory(l:parentDir)
-	call ApplyLocalSettings(l:parentDir)
-    endif
-
-    " now walk back down the path and source .vimsettings as you find them.
-    " child directories can inherit from their parents
-    let l:settingsFile = a:dirname . '/.vimrc.local'
-    if filereadable(l:settingsFile)
-	exec ':source' . l:settingsFile
-    endif
-endfunction
-
-
-function! HtmlUnEscape()
-  silent s/&lt;/</eg
-  silent s/&gt;/>/eg
-  silent s/&amp;/\&/eg
-endfunction
-
+" Debug line for python
 map <Leader>d :call InsertLine()<CR>
-
 function! InsertLine()
   let trace = expand("import pdb; pdb.set_trace()")
   execute "normal o".trace
 endfunction
 
-nnoremap <silent> <leader>u :call HtmlUnEscape()<cr>
-
+" Always look from the git root instead of current directory
+function! Find_git_root()
+    return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " close NERDTree after a file is opened
 let g:NERDTreeQuitOnOpen=0
 " show hidden files in NERDTree
@@ -339,20 +298,14 @@ xmap <M-x> <plug>NERDCommenterToggle
 
 let g:NERDCreateDefaultMappings=0
 
-
-nmap <leader>s :lopen<cr>
-nmap [s :lnext<cr>
-
 " latex box
 let s:extfname = expand("%:e")
 if s:extfname ==? "tex"
-	let g:LatexBox_split_type="new"
+  let g:LatexBox_split_type="new"
 endif
 
 " don't hide quotes in json files
 let g:vim_json_syntax_conceal = 0
-
-call ApplyLocalSettings(expand('.'))
 
 " imports
 source ~/.vim/init/airline.vim
@@ -362,26 +315,8 @@ source ~/.vim/init/vsearch.vim
 source ~/.vim/init/treesitter.vim
 source ~/.vim/init/telescope.vim
 
-
-" Fix CoC issue with endwise (https://github.com/tpope/vim-endwise/issues/109#issuecomment-652793808)
-let g:endwise_no_mappings = v:true
-inoremap <expr> <Plug>CustomCocCR pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-imap <CR> <Plug>CustomCocCR<Plug>DiscretionaryEnd
-
-
 " vim-vue
 let g:vue_pre_processors = []
-
-" compiler
-map <F2> mm ggVG== 'm zz :w<CR>
-map <F3> :!g++ -O2 "%:p" -lpthread -lrt -fopenmp<CR>
-map <F4>  :!./a.out <CR>
-
-" folding
-set foldlevel=99
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
-map <M-c> za
 
 " trailing spaces
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -392,23 +327,6 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 let c_space_errors = 1
 
-" line length
-set fo+=t
-
-set wildmode=full
-set splitright
-set autoread
-
-" alt shortcut in terminal
-"let c='a'
-"while c <= 'z'
-  ""exec "set <A-".c.">=\e".c
-  "exec "imap \e".c." <A-".c.">"
-  "let c = nr2char(1+char2nr(c))
-"endw
-
-set timeout ttimeoutlen=50
-
 " setting for multi cursor
 let g:multi_cursor_use_default_mapping=0
 
@@ -417,7 +335,7 @@ let g:multi_cursor_prev_key='<C-m>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-" Tawgbar outlitne
+" Tagbar outlitne
 nmap <leader>o :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 
@@ -442,22 +360,8 @@ nnoremap <silent> <leader>q :bd<CR>
 nmap <leader>ha <Plug>(GitGutterStageHunk)<CR>
 nmap <leader>hr <Plug>(GitGutterUndoHunk)<CR>
 
-command! -nargs=1 Ag execute "Ack! <args> " . Find_git_root()  . "/app"
-
-" Unbind arrow keys
-for prefix in [ 'i', 'n', 'v']
-  for key in ['<Up>', '<Down>', '<Left>', '<Right>']
-    exe prefix . "noremap " . key . " <Nop>"
-  endfor
-endfor
-
-" Neovim terminal bindings
-" Escape from the terminal with ESC
-" https://github.com/junegunn/fzf.vim/issues/544
-if has("nvim")
-  au TermOpen * tnoremap <buffer> <Esc> <c-\><c-n>
-  au FileType fzf tunmap <buffer> <Esc>
-endif
+" paste images from clipboard to markdown (https://github.com/ferrine/md-img-paste.vim)
+autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
 
 " vimviki
 let g:vimwiki_list = [{'path': '~/.vim/wiki/',
@@ -465,10 +369,6 @@ let g:vimwiki_list = [{'path': '~/.vim/wiki/',
 
 let R_external_term = 1
 let R_silent_term = 1
-
-let g:gruvbox_contrast_dark='soft'
-colorscheme gruvbox
-autocmd vimenter * ++nested colorscheme gruvbox
 
 " workspace
 let g:workspace_session_directory = $HOME . '/.vim/sessions/'

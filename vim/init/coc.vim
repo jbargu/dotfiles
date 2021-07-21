@@ -164,3 +164,8 @@ let g:coc_global_extensions = [
 			\'coc-rust-analyzer',
 			\'coc-tsserver'
 			\]
+
+" Fix CoC issue with endwise (https://github.com/tpope/vim-endwise/issues/109#issuecomment-652793808)
+let g:endwise_no_mappings = v:true
+inoremap <expr> <Plug>CustomCocCR pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+imap <CR> <Plug>CustomCocCR<Plug>DiscretionaryEnd
