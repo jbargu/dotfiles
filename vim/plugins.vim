@@ -4,9 +4,11 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'terryma/vim-multiple-cursors'
 
 " Session management
-Plug 'mhinz/vim-startify'
-Plug 'tpope/vim-obsession'
 Plug 'thaerkh/vim-workspace'
+
+" follow symlink
+Plug 'moll/vim-bbye'
+Plug 'aymericbeaumet/vim-symlink'
 
 " Tmux
 Plug 'edkolev/tmuxline.vim'
