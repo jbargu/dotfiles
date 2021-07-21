@@ -15,10 +15,11 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'myusuf3/numbers.vim'
 
 " utilities
-Plug 'kien/ctrlp.vim'
-" FZF (both needed)
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdcommenter'
@@ -29,7 +30,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 
-Plug 'mileszs/ack.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
@@ -58,6 +58,7 @@ Plug 'majutsushi/tagbar'
 
 " CoC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " org mode
 Plug 'vimwiki/vimwiki'

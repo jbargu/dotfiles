@@ -339,16 +339,6 @@ xmap <M-x> <plug>NERDCommenterToggle
 
 let g:NERDCreateDefaultMappings=0
 
-" map fuzzyfinder (CtrlP) plugin
-" nmap <silent> <leader>t :CtrlP<cr>
-nmap <silent> <leader>r :CtrlPBuffer<cr>
-let g:ctrlp_map='<leader>t'
-let g:ctrlp_working_path_mode = 'ra'
-
-if executable('rg')
-	let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --sort=none --glob "!.git"'
-	let g:ctrlp_use_caching = 0
-endif
 
 nmap <leader>s :lopen<cr>
 nmap [s :lnext<cr>
@@ -359,10 +349,8 @@ if s:extfname ==? "tex"
 	let g:LatexBox_split_type="new"
 endif
 
-
 " don't hide quotes in json files
 let g:vim_json_syntax_conceal = 0
-
 
 call ApplyLocalSettings(expand('.'))
 
@@ -371,6 +359,8 @@ source ~/.vim/init/airline.vim
 source ~/.vim/init/coc.vim
 source ~/.vim/init/neomake.vim
 source ~/.vim/init/vsearch.vim
+source ~/.vim/init/treesitter.vim
+source ~/.vim/init/telescope.vim
 
 
 " Fix CoC issue with endwise (https://github.com/tpope/vim-endwise/issues/109#issuecomment-652793808)
@@ -379,10 +369,6 @@ inoremap <expr> <Plug>CustomCocCR pumvisible() ? coc#_select_confirm() : "\<C-g>
 imap <CR> <Plug>CustomCocCR<Plug>DiscretionaryEnd
 
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Mine
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-vue
 let g:vue_pre_processors = []
 
@@ -392,8 +378,9 @@ map <F3> :!g++ -O2 "%:p" -lpthread -lrt -fopenmp<CR>
 map <F4>  :!./a.out <CR>
 
 " folding
-set foldmethod=indent
 set foldlevel=99
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 map <M-c> za
 
 " trailing spaces
@@ -473,7 +460,6 @@ if has("nvim")
 endif
 
 " vimviki
-
 let g:vimwiki_list = [{'path': '~/.vim/wiki/',
 		      \ 'syntax': 'markdown', 'ext': '.md'}]
 
