@@ -77,7 +77,6 @@ Plug 'moll/vim-node'
 
 " CSS
 Plug 'hail2u/vim-css3-syntax'
-Plug 'wavded/vim-stylus'
 Plug 'ap/vim-css-color'
 Plug 'groenewege/vim-less'
 Plug 'juvenn/mustache.vim'
@@ -95,7 +94,6 @@ Plug 'chrisbra/csv.vim'
 Plug 'cespare/vim-toml'
 
 " languages
-Plug 'tpope/vim-markdown'
 Plug 'ferrine/md-img-paste.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 

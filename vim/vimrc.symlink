@@ -88,7 +88,7 @@ if has('autocmd') && !exists('autocommands_loaded')
     autocmd FileType qf wincmd J
 
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-    let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'stylus', 'html']
+    let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'html', 'python', 'vim']
 endif
 
 " Setup renaming of tmux statusbar when switching
@@ -366,6 +366,7 @@ autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownCli
 " vimviki
 let g:vimwiki_list = [{'path': '~/.vim/wiki/',
 		      \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_global_ext = 0
 
 let R_external_term = 1
 let R_silent_term = 1
