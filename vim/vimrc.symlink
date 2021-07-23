@@ -116,7 +116,7 @@ set hidden " current buffer can be put into background
 set showcmd " show incomplete commands
 set noshowmode " don't show which mode disabled for PowerLine
 set wildmode=full " complete files like a shell
-set scrolloff=3 " lines of text around cursor
+set scrolloff=10 " lines of text around cursor
 set shell=$SHELL
 set splitright
 
