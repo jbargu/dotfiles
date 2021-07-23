@@ -30,8 +30,7 @@ alias fs="stat -f \"%z bytes\""
 
 alias v='f -e vim' # quick opening files with vim
 alias m='f -e mplayer' # quick opening files with mplayer
-alias o='xdg-open' # quick opening files with xdg-open
-alias oa='a -e xdg-open' # quick opening files with xdg-open
+alias i='xdg-open' # quick opening files with xdg-open
 alias vim='nvim'
 alias git='hub'
 
