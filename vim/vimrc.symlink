@@ -88,7 +88,7 @@ if has('autocmd') && !exists('autocommands_loaded')
     autocmd FileType qf wincmd J
 
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-    let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'html', 'python', 'vim']
+    let g:markdown_fenced_languages = ['javascript', 'json=javascript', 'python']
 endif
 
 " Setup renaming of tmux statusbar when switching
