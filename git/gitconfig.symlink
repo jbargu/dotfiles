@@ -82,10 +82,6 @@
     # remove grep - Remove found files that are NOT under version control
     rg = "!sh -c 'git ls-files --others --exclude-standard | grep $1 | xargs rm' -"
 
-    # Kaleidoscope commands
-    dkal = difftool -y -t Kaleidoscope
-    remotes = remote -v
-
     # check out a local copy of a PR. https://gist.github.com/gnarf/5406589
     pr  = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
     pr-clean = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
@@ -119,7 +115,7 @@
 [diff]
     renames = copies
     mnemonicprefix = true
-	tool = vimdiff3
+    tool = vimdiff3
 [difftool]
     prompt = false
 [apply]
@@ -127,7 +123,7 @@
     whitespace = nowarn
 [core]
     excludesfile = ~/.gitignore_global
-	pager = diff-so-fancy | less --tabs=4 -RFX
+    pager = delta
     editor = nvim
 [rerere]
     enabled = true
@@ -138,11 +134,6 @@
     lineNumber = true
 [credential]
 	helper = osxkeychain
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustexitcode = true
 [merge]
 	tool = vimdiff3
 [filter "lfs"]
@@ -156,3 +147,24 @@
 	path = nvim
 [mergetool "vimdiff3"]
 	path = nvim
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    features = line-numbers
+    whitespace-error-style = green
+    plus-empty-line-marker-style = bold green
+    syntax-theme = gruvbox-dark
+    file-decoration-style = yellow ul ol
+    file-style = yellow bold
+    hunk-header-style = none
+    hunk-header-decoration-style = none
+
+    plus-style = syntax "#004800"
+    minus-style = syntax "#832b30"
+    minus-emph-style  = syntax "#ff0000"
+    plus-emph-style  = syntax "#00af00"

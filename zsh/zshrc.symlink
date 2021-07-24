@@ -13,8 +13,8 @@ export PATH=$DOTFILES/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
 # check for custom bin directory and add to path
-if [[ -d ~/bin ]]; then
-  export PATH=~/bin:$PATH
+if [[ -d ~/.local/bin ]]; then
+  export PATH=~/.local/bin:$PATH
 fi
 
 # alias git to hub
@@ -22,7 +22,6 @@ if hash hub 2>/dev/null; then
   eval "$(hub alias -s)"
 fi
 
-export PATH=${PATH}:~/.dotfiles/diff-so-fancy
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 
 # initialize autocomplete (speeds up if commented)

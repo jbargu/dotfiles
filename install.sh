@@ -13,6 +13,11 @@ sudo apt-get install tmux neovim git hub zsh wget xclip build-essential cmake py
 
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Install git delta
+wget -O /tmp/git-delta.deb https://github.com/dandavison/delta/releases/download/0.8.3/git-delta_0.8.3_amd64.deb
+sudo dpkg -i /tmp/git-delta.deb
+
 cd ~
 
 # Install FZF
