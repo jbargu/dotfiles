@@ -66,4 +66,4 @@ nnoremap <LocalLeader>q :SlimeSend1 exit<CR>
 let g:pydocstring_doq_path="/usr/local/bin/doq"
 let g:pydocstring_formatter = 'google'
 
-nmap <silent> <C-I> <Plug>(pydocstring)
+nmap <silent> <LocalLeader>i <Plug>(pydocstring)
