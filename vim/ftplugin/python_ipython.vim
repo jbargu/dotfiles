@@ -16,6 +16,9 @@ let g:slime_default_config = {
 						\ 'target_pane': '{top-right}' }
 let g:slime_dont_ask_default = 1
 
+" fix updatehighlight issues
+let g:ipython_cell_highlight_cells = 0
+
 "------------------------------------------------------------------------------
 " ipython-cell configuration
 "------------------------------------------------------------------------------
@@ -67,3 +70,4 @@ let g:pydocstring_doq_path="/usr/local/bin/doq"
 let g:pydocstring_formatter = 'google'
 
 nmap <silent> <LocalLeader>i <Plug>(pydocstring)
+
