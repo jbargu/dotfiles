@@ -150,7 +150,8 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+nnoremap <silent><nowait> gq  :<C-u>CocListCancel<CR>
+nnoremap <silent><nowait> ge  :<C-u>CocListResume<CR>
 
 
 " Extensions
