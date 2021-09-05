@@ -37,4 +37,4 @@ alias git='hub'
 # fzf
 alias cat=batcat
 
-alias ww='vim ~/.dotfiles/vim/wiki/index.md'
+alias ww='cd ~/.dotfiles/vim/wiki && vim ~/.dotfiles/vim/wiki/index.md'
