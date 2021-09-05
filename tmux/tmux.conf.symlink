@@ -126,7 +126,7 @@ set -g @plugin 'nhdaly/tmux-better-mouse-mode'
 
 # Vim resurrection
 set -g @resurrect-strategy-nvim 'session'
-set -g @continuum-restore 'on'
+#set -g @continuum-restore 'on'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
