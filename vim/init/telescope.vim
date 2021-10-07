@@ -60,8 +60,11 @@ require('telescope').setup{
 require('telescope').load_extension('fzf')
 EOF
 
-nnoremap <leader>t <cmd>Telescope git_files<cr>
+nnoremap <leader>t :lua require'module.telescope-config'.project_files()<cr>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fr <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+"TODO: lua extensions are defined in ~/.config/nvim/lua. Move whole vim
+" configuration to there.
