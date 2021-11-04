@@ -319,7 +319,6 @@ source ~/.vim/init/coc.vim
 source ~/.vim/init/neomake.vim
 source ~/.vim/init/vsearch.vim
 source ~/.vim/init/treesitter.vim
-source ~/.vim/init/telescope.vim
 
 " vim-vue
 let g:vue_pre_processors = []
