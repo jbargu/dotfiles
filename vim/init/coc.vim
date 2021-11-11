@@ -159,6 +159,7 @@ let g:coc_global_extensions = [
 			\'coc-css',
 			\'coc-html',
 			\'coc-json',
+			\'coc-lua',
 			\'coc-prettier',
 			\'coc-pyright',
 			\'coc-r-lsp',
