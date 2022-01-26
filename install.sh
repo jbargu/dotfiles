@@ -66,3 +66,7 @@ sudo pip3 install --upgrade neovim
 # Also install node
 npm install --global prettier
 npm install tslint typescript -g
+
+# Install packer.nvim
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
