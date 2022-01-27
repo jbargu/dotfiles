@@ -319,6 +319,7 @@ source ~/.vim/init/airline.vim
 source ~/.vim/init/coc.vim
 source ~/.vim/init/neomake.vim
 source ~/.vim/init/vsearch.vim
+source ~/.vim/init/vim-test.vim
 source ~/.vim/init/treesitter.vim
 
 " vim-vue

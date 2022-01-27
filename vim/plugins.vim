@@ -51,6 +51,10 @@ Plug 'majutsushi/tagbar'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+" test
+Plug 'vim-test/vim-test'
+" check https://github.com/rcarriga/vim-ultest for upgrade
+
 " vim wiki
 Plug 'vimwiki/vimwiki'
 Plug 'sotte/presenting.vim'
