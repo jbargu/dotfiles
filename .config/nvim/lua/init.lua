@@ -1,3 +1,3 @@
 require('plugins')
-require('packer').sync()
+require('packer')
 require('module.telescope-config')
