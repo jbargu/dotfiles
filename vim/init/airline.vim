@@ -1,8 +1,12 @@
+" set by `:Tmuxline airline jbargu_preset`
+" preset is located under `autoload/presets/jbargu_preset.vim`
+"
 " airline options
 let g:airline_powerline_fonts=1
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_theme='gruvbox'
+let g:tmuxline_preset = 'jbargu_preset'
 
 "let g:airline_theme='dark'
 
@@ -50,3 +54,4 @@ if (has("gui_running"))
 		let g:airline_powerline_fonts=0
 		let g:airline_theme='solarized'
 endif
+
