@@ -19,6 +19,18 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 - setup monitors
 	- list with `xrandr` -> xrandr --output HDMI-1 --left-of DVI-I-1
 	- xrandr --output HDMI-1 --primary
+- fix dpi in ~/.Xresources
+    ```
+    Xft.dpi: 141
+    ```
+- retest with  `xrdb ~/.Xresources`
+
+- `~/.xprofile`:
+    
+    ```
+    xrandr --output DP-0 --primary
+    xrandr --output HDMI-0 --below DP-0  --scale 0.75x0.75
+    ```
 
 - install n: https://www.npmjs.com/package/n
 
@@ -27,3 +39,10 @@ https://dragly.org/2014/01/12/focusrite-scarlett-2i2-flawlessly-working-on-ubunt
 
 # Restart JACKD bus
 killall -9 jackdbus; sleep 2 && jack_control start && pactl set-default-sink jack_out
+
+
+# Debugger
+# Install https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(via--codelldb)
+#
+# Pomodoro to ~/.local/bin
+#https://github.com/open-pomodoro/openpomodoro-cli
