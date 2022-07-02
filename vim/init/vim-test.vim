@@ -1,3 +1,6 @@
+let test#strategy = "neovim"
+let test#neovim#term_position = "vert botright"
+
 nmap <silent> <leader>st :TestNearest<CR>
 nmap <silent> <leader>sT :TestFile<CR>
 nmap <silent> <leader>sa :TestSuite<CR>

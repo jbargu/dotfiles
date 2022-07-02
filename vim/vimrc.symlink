@@ -383,5 +383,6 @@ let g:workspace_session_directory = $HOME . '/.vim/sessions/'
 let g:workspace_session_disable_on_args = 1
 
 " AoC
-map <F3> :!cargo run < example_input <CR>
-map <F4> :!cargo run < puzzle_input <CR>
+map <F3> :vnew botright \| term cargo run<CR>
+map <F4> :TestSuite<CR>
+
