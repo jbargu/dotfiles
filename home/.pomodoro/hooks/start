@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -exo pipefail
+
+notify-send -u normal "Pomodoro started! $(pomodoro status)"
