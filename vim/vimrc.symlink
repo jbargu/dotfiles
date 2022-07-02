@@ -321,6 +321,7 @@ source ~/.vim/init/neomake.vim
 source ~/.vim/init/vsearch.vim
 source ~/.vim/init/vim-test.vim
 source ~/.vim/init/treesitter.vim
+source ~/.vim/init/vista.vim
 
 " vim-vue
 let g:vue_pre_processors = []
@@ -342,9 +343,8 @@ let g:multi_cursor_prev_key='<C-m>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-" Tagbar outlitne
-nmap <leader>o :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
+" Code outline
+nmap <leader>o :Vista!!<CR>
 
 " Fugitive mappings
 nnoremap <silent> <leader>gs :Git<CR>

@@ -50,6 +50,7 @@ Plug 'majutsushi/tagbar'
 " CoC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'liuchengxu/vista.vim' " code outline
 
 " test
 Plug 'vim-test/vim-test'
