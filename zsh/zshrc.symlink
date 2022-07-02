@@ -28,6 +28,9 @@ export RIPGREP_CONFIG_PATH=~/.ripgreprc
 autoload -U compinit
 compinit
 
+# fix insecure completion-dependent (https://github.com/ohmyzsh/ohmyzsh/issues/6835#issuecomment-390216875)
+ZSH_DISABLE_COMPFIX=true
+
 # Oh my zsh configuration
 export ZSH_TMUX_AUTOSTART=true
 ZSH_THEME="amuse-custom"
