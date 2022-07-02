@@ -27,7 +27,7 @@ ln -s ~/.dotfiles/.config/xfce4/terminal/terminalrc ~/.config/xfce4/terminal/ter
 ln -s ~/.dotfiles/.config/rofi ~/.config/rofi
 ln -s ~/.dotfiles/.config/redshift/redshift.conf redshift/redshift.conf
 ln -s ~/.dotfiles/.config/kitty ~/.config/kitty 
-
+ln -s ~/.dotfiles/hooks ~/.pomodoro/hooks
 # Home
 ln -s ~/.dotfiles/home/.ripgreprc ~
 

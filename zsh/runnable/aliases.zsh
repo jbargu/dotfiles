@@ -38,3 +38,10 @@ alias git='hub'
 alias cat=batcat
 
 alias ww='cd ~/.dotfiles/vim/wiki && vim ~/.dotfiles/vim/wiki/index.md'
+
+# pomodoro
+alias po=pomodoro
+alias pos='pomodoro start'
+alias pof='pomodoro finish'
+alias pob='pomodoro break'
+alias poi='pomodoro status'
