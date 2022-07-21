@@ -189,7 +189,7 @@ exec --no-startup-id megasync
 exec --no-startup-id redshift
 exec --no-startup-id kitty
 exec --no-startup-id firefox
-exec --no-startup-id obsidian
+exec --no-startup-id Obsidian-0.12.15.AppImage
 
 exec_always --no-startup-id xfce4-power-manager
 exec_always --no-startup-id dunst # notification daemon
