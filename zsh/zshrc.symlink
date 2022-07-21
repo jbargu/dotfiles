@@ -1,3 +1,5 @@
+echo "Rust in action"
+
 # Variables
 export EDITOR='nvim'
 export TERMINAL='kitty'
