@@ -152,24 +152,27 @@ local dap_ui = require "dapui"
 
 local _ = dap_ui.setup {
   -- You can change the order of elements in the sidebar
-  sidebar = {
+    layouts = {
+  {
     elements = {
-      -- Provide as ID strings or tables with "id" and "size" keys
-      {
-        id = "scopes",
-        size = 0.75, -- Can be float or integer > 1
-      },
-      { id = "watches", size = 00.25 },
+    -- Elements can be strings or table with id and size keys.
+      { id = "scopes", size = 0.25 },
+      "breakpoints",
+      --"stacks",
+      "watches",
     },
-    size = 50,
-    position = "left", -- Can be "left" or "right"
+    size = 40, -- 40 columns
+    position = "left",
   },
-
-  tray = {
-    elements = { "repl" },
-    size = 15,
-    position = "bottom", -- Can be "bottom" or "top"
+  {
+    elements = {
+      "repl",
+      "console",
+    },
+    size = 0.25, -- 25% of total lines
+    position = "bottom",
   },
+},
 }
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
