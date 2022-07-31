@@ -56,8 +56,7 @@ Plug 'liuchengxu/vista.vim' " code outline
 Plug 'vim-test/vim-test'
 " check https://github.com/rcarriga/vim-ultest for upgrade
 
-" vim wiki
-Plug 'vimwiki/vimwiki'
+" presenting
 Plug 'sotte/presenting.vim'
 
 " colorschemes

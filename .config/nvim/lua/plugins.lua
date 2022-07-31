@@ -5,6 +5,9 @@ return require('packer').startup(function(use)
   -- Notifications
   use "rcarriga/nvim-notify"
 
+  -- Code runner
+  use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
+
   -- DAP
   use "mfussenegger/nvim-dap"
   use "rcarriga/nvim-dap-ui"
