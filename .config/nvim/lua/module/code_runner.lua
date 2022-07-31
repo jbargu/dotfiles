@@ -15,3 +15,5 @@ require('code_runner').setup({
 
 vim.keymap.set('n', '<LocalLeader>w', ':RunClose<CR>:RunCode<CR>', { noremap = true, silent = false })
 vim.keymap.set('n', '<LocalLeader>q', ':RunClose<CR>', { noremap = true, silent = false })
+
+-- Use :CRProjects to define run command behaviour
