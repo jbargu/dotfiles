@@ -80,7 +80,7 @@ if has('autocmd') && !exists('autocommands_loaded')
     autocmd BufNewFile,BufRead *.ino set filetype=c
     autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 
-    autocmd FileType rust set autochdir
+    "autocmd FileType rust set autochdir
 
     " Turn off matching of brackets for HTML to prevent clashing with autoclose
     au FileType html let b:delimitMate_matchpairs = "(:),[:],{:}"

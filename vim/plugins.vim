@@ -22,6 +22,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
+" Nerdtree
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdcommenter'
@@ -46,6 +47,7 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)
 Plug 'sickill/vim-pasta'
 Plug 'majutsushi/tagbar'
+Plug 'airblade/vim-rooter' "set working directory to root
 
 " CoC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
