@@ -1,39 +1,36 @@
-" TextEdit might fail if hidden is not set.
-set hidden
-
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
-
-" Give more space for displaying messages.
-set cmdheight=1
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
 set updatetime=300
 
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
-if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
+set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#pum#visible() ? coc#pum#next(1):
+      \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-function! s:check_back_space() abort
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice.
+"inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+			      "\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Fix CoC issue with endwise (https://github.com/tpope/vim-endwise/issues/109#issuecomment-652793808)
+let g:endwise_no_mappings = v:true
+inoremap <expr> <Plug>CustomCocCR coc#pum#visible() ? coc#pum#confirm()
+			      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+imap <CR> <Plug>CustomCocCR<Plug>DiscretionaryEnd
+
+function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
@@ -43,15 +40,6 @@ if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
 else
   inoremap <silent><expr> <c-@> coc#refresh()
-endif
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-" position. Coc only does snippet and additional edit on confirm.
-" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
-if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
 " Use `[g` and `]g` to navigate diagnostics
@@ -66,13 +54,13 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> K :call ShowDocumentation()<CR>
 
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
   else
-    call CocAction('doHover')
+    call feedkeys('K', 'in')
   endif
 endfunction
 
@@ -94,7 +82,7 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-" Link to less aggresive hint color
+" Use less aggresive hint color
 autocmd ColorScheme * hi link CocHintSign GruvboxBg2
 
 " Applying codeAction to the selected region.
@@ -107,6 +95,9 @@ nmap <leader>cac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>cqf  <Plug>(coc-fix-current)
 
+" Run the Code Lens action on the current line.
+nmap <leader>ccl  <Plug>(coc-codelens-action)
+
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
 xmap if <Plug>(coc-funcobj-i)
@@ -117,6 +108,16 @@ xmap ic <Plug>(coc-classobj-i)
 omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
+
+" Remap <C-f> and <C-b> for scroll float windows/popups.
+if has('nvim-0.4.0') || has('patch-8.2.0750')
+  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+endif
 
 " Use CTRL-S for selections ranges.
 " Requires 'textDocument/selectionRange' support of LS, ex: coc-tsserver
@@ -153,8 +154,8 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
-nnoremap <silent><nowait> gq  :<C-u>CocListCancel<CR>
-nnoremap <silent><nowait> ge  :<C-u>CocListResume<CR>
+nnoremap <silent><nowait> <space>q  :<C-u>CocListCancel<CR>
+nnoremap <silent><nowait> <space>e  :<C-u>CocListResume<CR>
 
 
 " Extensions
@@ -167,10 +168,6 @@ let g:coc_global_extensions = [
 			\'coc-pyright',
 			\'coc-r-lsp',
 			\'coc-rust-analyzer',
-			\'coc-tsserver'
+			\'coc-tsserver',
+			\'coc-sh'
 			\]
-
-" Fix CoC issue with endwise (https://github.com/tpope/vim-endwise/issues/109#issuecomment-652793808)
-let g:endwise_no_mappings = v:true
-inoremap <expr> <Plug>CustomCocCR pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-imap <CR> <Plug>CustomCocCR<Plug>DiscretionaryEnd
