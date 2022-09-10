@@ -50,7 +50,8 @@ Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-rooter' "set working directory to root
 
 " CoC
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'} " to fix Rust issues with 0.0.82, revert back to release with 0.0.83
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'liuchengxu/vista.vim' " code outline
 
