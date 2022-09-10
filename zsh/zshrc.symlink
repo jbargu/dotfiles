@@ -38,7 +38,7 @@ export ZSH_TMUX_AUTOSTART=true
 ZSH_THEME="amuse-custom"
 
 # zsh-syntax-highlighting must be the last one sourced
-plugins=(git bundler common-aliases colored-man-pages docker sudo tmux vi-mode fasd github history-search-multi-word zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git bundler common-aliases colored-man-pages docker tmux vi-mode fasd github history-search-multi-word zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
