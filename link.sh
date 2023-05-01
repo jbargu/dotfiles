@@ -19,7 +19,7 @@ mkdir -p ~/.config/i3
 ln -s ~/.dotfiles/i3/i3_config ~/.config/i3/config
 
 mkdir -p ~/.config/polybar
-ln -s ~/.dotfiles/i3/polybar/config ~/.config/polybar/config
+ln -s ~/.dotfiles/i3/polybar/config.ini ~/.config/polybar/config.ini
 ln -s ~/.dotfiles/i3/polybar/launch.sh ~/.config/polybar/launch.sh
 
 ln -s ~/.dotfiles/.config/flake8 ~/.config/flake8

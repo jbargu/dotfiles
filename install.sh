@@ -25,6 +25,8 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
 
+# Install symbols
+https://sw.kovidgoyal.net/kitty/faq/#kitty-is-not-able-to-use-my-favorite-font
 
 # Install powerline font
 mkdir -p ~/.fonts/
