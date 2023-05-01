@@ -38,7 +38,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec "rofi -combi-modi window#drun#fb -font 'mono 18' -show combi -modi 'fb:~/.dotfiles/.config/rofi/rofi-file-browser.sh'"
+bindsym $mod+d exec "rofi -combi-modi window#drun#fb -font 'mono 18' -show combi -modi 'fb:~/.dotfiles/.config/rofi/rofi-file-browser.sh,combi,run'"
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -189,7 +189,7 @@ exec --no-startup-id megasync
 exec --no-startup-id redshift
 exec --no-startup-id kitty
 exec --no-startup-id firefox
-exec --no-startup-id Obsidian-0.12.15.AppImage
+exec --no-startup-id Obsidian-1.1.8.AppImage 
 
 exec_always --no-startup-id xfce4-power-manager
 exec_always --no-startup-id dunst # notification daemon
@@ -197,7 +197,7 @@ exec_always --no-startup-id jack_control start
 exec_always --no-startup-id pactl set-default-sink jack_out
 
 # Lock screen with ctrl + alt + L (xmodmap for alt keymap)
-bindsym --release Ctrl+mod1+Delete  exec --no-startup-id xflock4
+bindsym --release Ctrl+mod1+Delete  exec --no-startup-id "xfce4-screensaver-command --lock; xset dpms force off;"
 bindsym --release Ctrl+mod1+L  exec --no-startup-id systemctl suspend
 
 # Set background image
