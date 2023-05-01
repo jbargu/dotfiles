@@ -163,6 +163,7 @@
     file-style = yellow bold
     hunk-header-style = none
     hunk-header-decoration-style = none
+    navigate = true
 
     plus-style = syntax "#004800"
     minus-style = syntax "#832b30"

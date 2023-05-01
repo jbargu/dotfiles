@@ -129,7 +129,7 @@ Plug 'hanschen/vim-ipython-cell'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 
 " R
-Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
+"Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 
 " Neovim
 Plug 'neomake/neomake'
