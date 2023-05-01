@@ -15,4 +15,7 @@ require'nvim-treesitter.configs'.setup {
 		},
 	},
 }
+vim.api.nvim_set_hl(0, "@variable", { link = "GruvboxFg0" })
+vim.api.nvim_set_hl(0, "@parameter", { link = "GruvboxFg0" })
+vim.api.nvim_set_hl(0, "@constant", { link = "GruvboxPurple" })
 EOF
