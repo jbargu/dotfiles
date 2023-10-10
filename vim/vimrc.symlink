@@ -190,7 +190,7 @@ set undofile
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General mappings/shortcuts for functionality
 " remap esc
-inoremap jk <esc>
+"inoremap jk <esc>
 
 " remove extra whitespace
 nmap <leader><space> :%s/\s\+$<cr>
@@ -368,6 +368,8 @@ nnoremap <silent> <leader>q :bd<CR>
 " Git gutter mappings
 nmap <leader>ha <Plug>(GitGutterStageHunk)<CR>
 nmap <leader>hr <Plug>(GitGutterUndoHunk)<CR>
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
 
 " paste images from clipboard to markdown (https://github.com/ferrine/md-img-paste.vim)
 autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
