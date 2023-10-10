@@ -51,6 +51,7 @@ Plug 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)
 Plug 'sickill/vim-pasta'
 Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-rooter' "set working directory to root
+Plug 'karb94/neoscroll.nvim'
 
 " CoC
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
