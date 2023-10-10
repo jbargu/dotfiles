@@ -197,7 +197,7 @@ exec_always --no-startup-id jack_control start
 exec_always --no-startup-id pactl set-default-sink jack_out
 
 # Lock screen with ctrl + alt + L (xmodmap for alt keymap)
-bindsym --release Ctrl+mod1+Delete  exec --no-startup-id "xfce4-screensaver-command --lock; xset dpms force off;"
+bindsym --release Ctrl+mod1+Delete  exec --no-startup-id "xfce4-screensaver-command --lock; sleep 5; xset dpms force off;"
 bindsym --release Ctrl+mod1+L  exec --no-startup-id systemctl suspend
 
 # Set background image
