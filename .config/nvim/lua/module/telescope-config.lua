@@ -74,8 +74,8 @@ require('telescope').setup{
 require('telescope').load_extension('fzf')
 
 -- Mappings
-vim.cmd [=[ nnoremap <leader>t :lua require'module.telescope-config'.project_files()<cr>]=]
-vim.cmd [=[ nnoremap <leader>ff <cmd>Telescope find_files<cr>]=]
+vim.cmd [=[ nnoremap <leader>fg :lua require'module.telescope-config'.project_files()<cr>]=]
+vim.cmd [=[ nnoremap <leader>t <cmd>Telescope find_files<cr>]=]
 vim.cmd [=[ nnoremap <leader>r <cmd>Telescope live_grep<cr>]=]
 vim.cmd [=[ nnoremap <leader>fr <cmd>Telescope buffers<cr>]=]
 vim.cmd [=[ nnoremap <leader>fh <cmd>Telescope help_tags<cr>]=]
