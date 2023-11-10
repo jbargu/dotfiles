@@ -66,8 +66,7 @@ nnoremap <LocalLeader>d :SlimeSend1 %debug<CR>
 nnoremap <LocalLeader>q :SlimeSend1 exit<CR>
 
 " Shortcut for autogen docstrings
-let g:pydocstring_doq_path="/usr/local/bin/doq"
 let g:pydocstring_formatter = 'google'
 
-nmap <silent> <LocalLeader>i <Plug>(pydocstring)
+nmap <silent> <LocalLeader>e <Plug>(pydocstring)
 
