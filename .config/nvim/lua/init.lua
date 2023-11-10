@@ -8,3 +8,4 @@ require('neoscroll').setup({
 require('module.telescope-config')
 require('module.notify')
 require('module.code_runner')
+require('module.harpoon')

@@ -22,6 +22,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-tree/nvim-web-devicons'
+Plug 'ThePrimeagen/harpoon'
 
 " Nerdtree
 Plug 'scrooloose/nerdtree'
@@ -130,7 +131,7 @@ Plug 'jpalardy/vim-slime'
 Plug 'hanschen/vim-ipython-cell'
 
 " Auto generatee docstrings with CTRL+I
-Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
+Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
 
 " R
 "Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
