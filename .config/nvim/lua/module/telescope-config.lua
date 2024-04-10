@@ -1,3 +1,10 @@
+local telescope = require("telescope")
+
+local lga_actions = require("telescope-live-grep-args.actions")
+local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
+
+require('telescope').load_extension('fzf')
+
 require('telescope').setup{
     defaults = {
 	vimgrep_arguments = {
@@ -31,8 +38,8 @@ require('telescope').setup{
 	},
 	mappings = {
 	    i = {
-		["<C-Down>"] = require('telescope.actions').cycle_history_next,
-		["<C-Up>"] = require('telescope.actions').cycle_history_prev,
+		["<C-F>"] = require('telescope.actions').cycle_history_next,
+		["<C-B>"] = require('telescope.actions').cycle_history_prev,
 	    },
 	},
 	file_sorter =  require'telescope.sorters'.get_fuzzy_file,
@@ -69,16 +76,28 @@ require('telescope').setup{
 	    case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
 	    -- the default case_mode is "smart_case"
 	},
+	live_grep_args = {
+	    auto_quoting = true, -- enable/disable auto-quoting
+	    -- define mappings, e.g.
+	    mappings = { -- extend mappings
+		i = {
+		["<C-k>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+		["<C-i>"] = lga_actions.quote_prompt({ postfix =" -t "}),
+		},
+	    },
+	    }
     }
 }
-require('telescope').load_extension('fzf')
 
 -- Mappings
 vim.cmd [=[ nnoremap <leader>fg :lua require'module.telescope-config'.project_files()<cr>]=]
 vim.cmd [=[ nnoremap <leader>t <cmd>Telescope find_files<cr>]=]
-vim.cmd [=[ nnoremap <leader>r <cmd>Telescope live_grep<cr>]=]
-vim.cmd [=[ nnoremap <leader>fr <cmd>Telescope buffers<cr>]=]
+--vim.cmd [=[ nnoremap <leader>r <cmd>Telescope live_grep<cr>]=]
+vim.cmd [=[ nnoremap <leader>r :lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>]=]
+vim.cmd [=[ nnoremap <leader>fr :lua  require('telescope-live-grep-args.shortcuts').grep_word_under_cursor()<cr>]=]
+vim.cmd [=[ nnoremap <leader>ft <cmd>Telescope buffers<cr>]=]
 vim.cmd [=[ nnoremap <leader>fh <cmd>Telescope help_tags<cr>]=]
+
 
 local M = {}
 

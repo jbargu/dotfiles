@@ -21,6 +21,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'nvim-telescope/telescope-live-grep-args.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'ThePrimeagen/harpoon'
 
@@ -71,6 +72,7 @@ Plug 'sotte/presenting.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
+Plug 'lurst/austere.vim'
 
 " solidity
 Plug 'TovarishFin/vim-solidity'
@@ -129,6 +131,8 @@ Plug 'nelstrom/vim-textobj-rubyblock'
 " Python
 Plug 'jpalardy/vim-slime'
 Plug 'hanschen/vim-ipython-cell'
+
+Plug 'Tetralux/odin.vim'
 
 " Auto generatee docstrings with CTRL+I
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
