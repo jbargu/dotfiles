@@ -30,6 +30,7 @@ ln -s ~/.dotfiles/.config/kitty ~/.config/kitty
 ln -s ~/.dotfiles/hooks ~/.pomodoro/hooks
 # Home
 ln -s ~/.dotfiles/home/.ripgreprc ~
+ln -s ~/.dotfiles/home/.ideavimrc ~/.ideavimrc 
 
 # ipython
 ln -s ~/.dotfiles/links/.ipython/profile_default/ipython_config.py ~/.ipython/profile_default/ipython_config.py

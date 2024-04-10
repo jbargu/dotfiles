@@ -1,0 +1,62 @@
+""" Map leader to space ---------------------
+let mapleader=","
+
+set surround
+set multiple-cursors
+
+""" Common settings -------------------------
+set showmode
+set so=5
+set incsearch
+set nu
+set relativenumber
+:set ignorecase
+
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideaput
+set ideastatusicon=gray
+set idearefactormode=keep
+
+set clipboard=unnamedplus
+
+map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>t <Action>(SearchEverywhere)
+map <M-x> <Action>(CommentByLineComment)
+map <M-c> <Action>(ExpandCollapseToggleAction)
+map <leader>cr <Action>(RenameElement)
+map <leader>fr <Action>(Switcher)
+map <leader>r <Action>(FindInPath)
+map <leader>. <C-6>
+map <leader><leader> :w<CR>
+map tk <Action>(PreviousTab)
+map tj <Action>(NextTab)
+
+map \c <Action>(Run)
+map \q <Action>(Stop)
+map \d <Action>(Debug)
+map \z <Action>(ToggleDistractionFreeMode)
+map \f <Action>(ReformatCode)
+
+map <C-h> <C-W><C-h>
+map <C-l> <C-W><C-l>
+map <C-j> <C-W><C-j>
+map <C-k> <C-W><C-k>
+
+map <leader>1 <Action>(GoToTab1)
+map <leader>2 <Action>(GoToTab2)
+map <leader>3 <Action>(GoToTab3)
+map <leader>4 <Action>(GoToTab4)
+map <leader>5 <Action>(GoToTab5)
+
+
+map gd <Action>(GotoDeclaration)
+map gi <Action>(GotoImplementation)
+map <C-n> <Plug>NextWholeOccurrence
+map c] <Action>(GotoNextError)
+map <leader>o <Action>(FileStructurePopup)
+
+
+map <space>m <Action>(continue.focusContinueInput)
+map <space>e <Action>(continue.focusContinueInputWithEdit)
