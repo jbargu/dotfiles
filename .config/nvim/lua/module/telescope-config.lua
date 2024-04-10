@@ -1,7 +1,5 @@
 local telescope = require("telescope")
-
 local lga_actions = require("telescope-live-grep-args.actions")
-local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
 
 require('telescope').load_extension('fzf')
 
