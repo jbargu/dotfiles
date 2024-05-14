@@ -383,6 +383,7 @@ let g:workspace_session_disable_on_args = 1
 
 " Test suite
 map <LocalLeader>t :TestSuite<CR>
+nnoremap <leader>w :ToggleWorkspace<CR>
 
 " Slime config
 let g:slime_target = "tmux"
