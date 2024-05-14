@@ -104,7 +104,6 @@ Plug 'mattn/emmet-vim' " HTML expand tags
 Plug 'gregsexton/MatchTag'
 
 " formats
-Plug 'elzr/vim-json'
 Plug 'chrisbra/csv.vim'
 Plug 'cespare/vim-toml'
 
