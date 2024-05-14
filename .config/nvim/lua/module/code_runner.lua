@@ -2,6 +2,7 @@ require('code_runner').setup({
   mode = 'term',
   focus = false,
   startinsert = false,
+  hot_reload = false,
   term = {
     --  Position to open the terminal, this option is ignored if mode is tab
     position = "vertical botright",
