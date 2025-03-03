@@ -106,7 +106,7 @@ augroup tmux
   endif
 augroup END
 
-let g:python3_host_prog = '/usr/bin/python3.10'
+let g:python3_host_prog = '/home/nibbles/.asdf/shims/python3'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => User Interface
@@ -200,7 +200,7 @@ nmap <leader>, :w<cr>
 noremap Q <NOP>
 
 " set paste toggle
-set pastetoggle=<F6>
+"set pastetoggle=<F6>
 
 " edit ~/.vimrc
 map <leader>ev :e! ~/.vimrc<cr>
@@ -227,8 +227,8 @@ set showbreak=↪
 
 " Add shortcuts for tab
 nnoremap th  :tabfirst<CR>
-nnoremap tj  :tabprev<CR>
-nnoremap tk  :tabnext<CR>
+nnoremap tk  :tabprev<CR>
+nnoremap tj  :tabnext<CR>
 nnoremap tl  :tablast<CR>
 nnoremap tt  :tabedit<Space>
 nnoremap tn  :tabnew<Space>
@@ -317,7 +317,7 @@ source ~/.vim/init/coc.vim
 source ~/.vim/init/neomake.vim
 source ~/.vim/init/vsearch.vim
 source ~/.vim/init/vim-test.vim
-source ~/.vim/init/treesitter.vim
+source ~/.vim/init/gruvbox-colors.vim
 source ~/.vim/init/vista.vim
 
 " vim-vue
@@ -382,7 +382,6 @@ let g:workspace_session_directory = $HOME . '/.vim/sessions/'
 let g:workspace_session_disable_on_args = 1
 
 " Test suite
-map <LocalLeader>t :TestSuite<CR>
 nnoremap <leader>w :ToggleWorkspace<CR>
 
 " Slime config
