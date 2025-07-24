@@ -158,14 +158,15 @@
     features = line-numbers
     whitespace-error-style = green
     plus-empty-line-marker-style = bold green
-    syntax-theme = gruvbox-dark
+    syntax-theme = gruvbox-light
+    #syntax-theme = gruvbox-dark # for dark
     file-decoration-style = yellow ul ol
     file-style = yellow bold
     hunk-header-style = none
     hunk-header-decoration-style = none
     navigate = true
 
-    plus-style = syntax "#004800"
-    minus-style = syntax "#832b30"
-    minus-emph-style  = syntax "#ff0000"
-    plus-emph-style  = syntax "#00af00"
+    #plus-style = syntax "#004800"
+    #minus-style = syntax "#832b30"
+    #minus-emph-style  = syntax "#ff0000"
+    #plus-emph-style  = syntax "#00af00"

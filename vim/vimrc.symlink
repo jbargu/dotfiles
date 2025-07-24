@@ -113,8 +113,10 @@ let g:python3_host_prog = '/home/nibbles/.asdf/shims/python3'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:gruvbox_contrast_dark='soft'
+let g:gruvbox_contrast_light='hard'
 colorscheme gruvbox
 autocmd vimenter * ++nested colorscheme gruvbox
+command! BackgroundToggle execute 'set background=' . (&background ==# 'dark' ? 'light' : 'dark')
 
 set so=7 " set 7 lines to the cursors - when moving vertical
 set wildmenu " enhanced command line completion

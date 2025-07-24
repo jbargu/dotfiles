@@ -6,6 +6,10 @@ Plug 'terryma/vim-multiple-cursors'
 " Session management
 Plug 'thaerkh/vim-workspace'
 
+" Center screen
+"Plug 'junegunn/goyo.vim'
+Plug 'shortcuts/no-neck-pain.nvim', { 'tag': '*' }
+
 " follow symlink
 Plug 'moll/vim-bbye'
 Plug 'aymericbeaumet/vim-symlink'
@@ -56,8 +60,8 @@ Plug 'airblade/vim-rooter' "set working directory to root
 Plug 'karb94/neoscroll.nvim'
 
 " CoC
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'} " to fix Rust issues with 0.0.82, revert back to release with 0.0.83
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'} " to fix Rust issues with 0.0.82, revert back to release with 0.0.83
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'liuchengxu/vista.vim' " code outline
 
@@ -71,7 +75,8 @@ Plug 'sotte/presenting.vim'
 " colorschemes
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox' " morhetz with Rust changes
 Plug 'lurst/austere.vim'
 
 " solidity
