@@ -86,12 +86,13 @@ unbind [
 bind Escape copy-mode
 unbind p
 bind p paste-buffer
-bind-key -T copy-mode-vi 'v' send -X begin-selection
-bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
 
-#bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
 bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "xclip -i -f -selection primary | xclip -i -selection clipboard"
 bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -i -f -selection primary | xclip -i -selection clipboard"
+
+# Don't scroll to the end when copying
+set -g @yank_action 'copy-pipe-and-cancel'
+
 
 # http://askubuntu.com/a/507215/413683
 set -g set-clipboard off
@@ -144,6 +145,3 @@ set -g @resurrect-strategy-nvim 'session'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
-
-# Don't scroll to the end when copying
-set -g @yank_action 'copy-pipe'
