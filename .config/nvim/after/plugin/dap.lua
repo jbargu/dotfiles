@@ -94,10 +94,16 @@ dap.adapters.rt_lldb = function(callback, _)
   end)
 end
 
+dap.adapters.gdb = {
+  type = "executable",
+  command = "gdb",
+  args = { "--interpreter=dap", "--eval-command", "set print pretty on" }
+}
+
 dap.configurations.rust = {
   {
     name = "Launch",
-    type = "rt_lldb",
+    type = "gdb",
     request = "launch",
     program = function()
       return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")

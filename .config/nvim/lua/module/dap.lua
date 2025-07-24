@@ -86,7 +86,7 @@ M.debug_rust_runnable = function(item)
             if type(json) == "table" and json.executable ~= vim.NIL and json.executable ~= nil then
               local dap_config = {
                 name = "Rust tools debug",
-                type = "rt_lldb",
+                type = "gdb",
                 request = "launch",
                 program = json.executable,
                 args = item.args.executableArgs,
