@@ -102,7 +102,7 @@ bindsym $mod+q [class="(?i)firefox"] focus
 bindsym $mod+x [class="(?i)terminal"] focus
 
 # switch to workspace
-bindsym $mod+1 workspace 1
+bindsym $mod+1 workspace --no-auto-back-and-forth 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
@@ -204,7 +204,7 @@ bindsym --release Ctrl+mod1+Delete  exec --no-startup-id "xfce4-screensaver-comm
 bindsym --release Ctrl+mod1+L  exec --no-startup-id systemctl suspend
 
 # Set background image
-exec --no-startup-id feh --bg-scale ~/Downloads/background.png
+exec --no-startup-id feh --bg-scale ~/Downloads/backgrounds/current.png
 
 #for_window [class=".*"] move absolute position left
 floating_minimum_size 75 x 50
@@ -215,3 +215,6 @@ floating_maximum_size 1600 x 1200
 # dm-tool switch-to-greeter
 #
 #assign [class="core-Game"] 2
+
+
+for_window [class="NothingCanGoWrong"] floating enable
