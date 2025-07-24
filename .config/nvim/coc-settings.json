@@ -11,11 +11,21 @@
     "typescriptreact",
     "javascriptreact",
     "typescript",
-    "json"
+    "json",
+    "vue",
+    "ruby"
   ],
   "python.linting.enabled": false,
   "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/13.0.0/clangd_13.0.0/bin/clangd",
   "rust-analyzer.inlayHints.enable": true,
   "rust-analyzer.updates.prompt": false,
-  "suggest.labelMaxLength": 80
+  "rust-analyzer.server.extraEnv": { "RUSTUP_TOOLCHAIN": "stable" },
+  "rust-analyzer.procMacro.enable": true,
+  "rust-analyzer.cargo.cfgs": [],
+  "suggest.labelMaxLength": 80,
+  "sql.database": "postgresql",
+  "sql.formatOptions": {
+    "language": "postgresql",
+    "dialect": "postgresql"
+  }
 }
