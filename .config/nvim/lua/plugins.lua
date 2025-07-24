@@ -7,6 +7,7 @@ return require('packer').startup(function(use)
 
   -- Code runner
   use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
+  --use "natecraddock/telescope-zf-native.nvim"
 
   -- DAP
   use { "nvim-neotest/nvim-nio" }
