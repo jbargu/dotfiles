@@ -203,17 +203,18 @@ noremap Q <NOP>
 
 " set paste toggle
 "set pastetoggle=<F6>
+let g:pasta_paste_before_mapping = ',P'
 
 " edit ~/.vimrc
-map <leader>ev :e! ~/.vimrc<cr>
+map <leader>pv :e! ~/.vimrc<cr>
 " edit vim plugins
-map <leader>evp :e! ~/.vim/plugins.vim<cr>
+map <leader>pvp :e! ~/.vim/plugins.vim<cr>
 " edit vim functions
-map <leader>evf :e! ~/.vim/functions.vim<cr>
+map <leader>pvf :e! ~/.vim/functions.vim<cr>
 " re-source file
-map <leader>er :source $MYVIMRC<CR><cr>
+map <leader>pr :source $MYVIMRC<CR><cr>
 " edit gitconfig
-map <leader>eg :e! ~/.gitconfig<cr>
+map <leader>pg :e! ~/.gitconfig<cr>
 
 " clear highlighted search
 noremap <space> :set hlsearch! hlsearch?<cr>

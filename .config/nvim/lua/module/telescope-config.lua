@@ -88,10 +88,11 @@ require('telescope').setup{
 -- Mappings
 vim.cmd [=[ nnoremap <leader>fg :lua require'module.telescope-config'.project_files()<cr>]=]
 vim.cmd [=[ nnoremap <leader>t <cmd>Telescope find_files<cr>]=]
+vim.cmd [=[ nnoremap <leader>fa <cmd>Telescope find_files no_ignore=true<cr>]=]
 --vim.cmd [=[ nnoremap <leader>r <cmd>Telescope live_grep<cr>]=]
 vim.cmd [=[ nnoremap <leader>r :lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>]=]
 vim.cmd [=[ nnoremap <leader>fr :lua  require('telescope-live-grep-args.shortcuts').grep_word_under_cursor()<cr>]=]
-vim.cmd [=[ nnoremap <leader>ft <cmd>Telescope buffers<cr>]=]
+vim.cmd [=[ nnoremap <leader>e <cmd>Telescope buffers<cr>]=]
 vim.cmd [=[ nnoremap <leader>fh <cmd>Telescope help_tags<cr>]=]
 
 
