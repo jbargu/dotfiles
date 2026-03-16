@@ -5,6 +5,7 @@
     "rust",
     "python",
     "css",
+    "scss",
     "html",
     "htmldjango",
     "javascript",
@@ -13,7 +14,9 @@
     "typescript",
     "json",
     "vue",
-    "ruby"
+    "ruby",
+    "terraform",
+    "eruby"
   ],
   "python.linting.enabled": false,
   "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/13.0.0/clangd_13.0.0/bin/clangd",
@@ -27,5 +30,15 @@
   "sql.formatOptions": {
     "language": "postgresql",
     "dialect": "postgresql"
-  }
+  },
+  "languageserver": {
+    "terraform": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["terraform", "tf"],
+      "initializationOptions": {}
+    }
+  },
+  "html.filetypes": ["html", "handlebars", "htmldjango", "blade"],
+  "html.format.templating": true
 }

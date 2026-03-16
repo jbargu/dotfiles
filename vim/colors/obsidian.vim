@@ -7,7 +7,6 @@
 " in fact exactly the same, and exist simply because I was too lazy to remove
 " them yet.
 
-set background=dark
 hi clear
 if exists("syntax_on")
     syntax reset

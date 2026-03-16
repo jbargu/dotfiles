@@ -112,6 +112,7 @@ let g:python3_host_prog = '/home/nibbles/.asdf/shims/python3'
 " => User Interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+set background=light
 let g:gruvbox_contrast_dark='soft'
 let g:gruvbox_contrast_light='hard'
 colorscheme gruvbox
@@ -327,13 +328,14 @@ source ~/.vim/init/vista.vim
 let g:vue_pre_processors = []
 
 " trailing spaces
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
-let c_space_errors = 1
+function! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfunction
+
+set list listchars=tab:\ \ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+autocmd BufWritePre * call TrimWhitespace()
 
 " setting for multi cursor
 let g:multi_cursor_use_default_mapping=0
@@ -370,7 +372,7 @@ nmap ]h <Plug>(GitGutterNextHunk)
 nmap [h <Plug>(GitGutterPrevHunk)
 
 " paste images from clipboard to markdown (https://github.com/ferrine/md-img-paste.vim)
-autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
+"autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
 
 " vimviki
 let g:vimwiki_list = [{'path': '~/.vim/wiki/',
@@ -391,3 +393,8 @@ nnoremap <leader>w :ToggleWorkspace<CR>
 let g:slime_target = "tmux"
 let g:slime_dont_ask_default = 1
 let g:slime_default_config = {'socket_name': get(split($TMUX, ','), 0), 'target_pane': '{top-right}' }
+
+" Temporarily disable stderr for Ruby
+let g:neomake_ruby_rubocop_maker = {
+    \ 'stderr': 0,
+\ }

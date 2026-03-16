@@ -35,7 +35,8 @@ alias vim='nvim'
 alias git='hub'
 
 # fzf
-alias cat=batcat
+#alias cat='batcat --theme-light gruvbox-light --theme-dark gruvbox-dark'
+alias cat='batcat --theme gruvbox-light'
 
 alias ww='cd ~/.dotfiles/vim/wiki && vim ~/.dotfiles/vim/wiki/index.md'
 

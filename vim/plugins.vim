@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/vim-plug')
 " added
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " Session management
 Plug 'thaerkh/vim-workspace'
