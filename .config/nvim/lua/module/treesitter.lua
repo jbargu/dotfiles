@@ -1,25 +1,19 @@
-require'nvim-treesitter.configs'.setup {
-  -- A list of parser names, or "all" (the listed parsers MUST always be installed)
-  ensure_installed = "all",
+local ts = require('nvim-treesitter')
 
-  -- Install parsers synchronously (only applied to `ensure_installed`)
-  sync_install = false,
+ts.install({
+  'all'
+}):wait(30000)
 
-  -- Automatically install missing parsers when entering buffer
-  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-  auto_install = true,
-
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-  },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = ",ann",
-      node_incremental = ",arn",
-      scope_incremental = ",arc",
-      node_decremental = ",arm",
-    },
-  },
-}
+-- Enable highlighting + incremental selection per filetype
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = '*',
+  callback = function(ev)
+    -- Disable treesitter highlighting if any line is too long
+    for _, line in ipairs(vim.api.nvim_buf_get_lines(ev.buf, 0, -1, false)) do
+      if #line > 1000 then
+        return
+      end
+    end
+    pcall(vim.treesitter.start, ev.buf)
+  end,
+})
